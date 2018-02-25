@@ -150,7 +150,7 @@
 
   <input type="button" onclick="myFunction()" value="Submit">
 </form>
-
+ <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places"></script>
 <script>
 function myFunction() {
     document.getElementById("frm1").submit();
@@ -282,18 +282,9 @@ function closeNav() {
       }
 
 
-    </script>
-    <script type='text/javascript'>
-  function initialize() {
-    var input = document.getElementById('search_address');
-
-    var autocomplete = new google.maps.places.Autocomplete(input);
-  }
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+  </script>
     
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places"></script>
+   
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&callback=initMap">
     </script>
