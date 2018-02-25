@@ -282,8 +282,12 @@ function closeNav() {
         infoWindow.open(map);
       }
 
-     directionsService.route({
-          origin: document.getElementById('start').pos,
+     directionsService.route(){
+         var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+          origin: pos,
           destination: document.getElementById('end').value,
           waypoints: waypts,
           optimizeWaypoints: true,
@@ -308,7 +312,7 @@ function closeNav() {
           }
         });
       }
-    </script>
+    </script><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&callback=initMap">
     </script>
