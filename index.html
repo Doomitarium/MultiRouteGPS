@@ -281,9 +281,9 @@ function closeNav() {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
-    </script>
+
      directionsService.route({
-          origin: document.getElementById('start').value,
+          origin: document.getElementById('start').pos,
           destination: document.getElementById('end').value,
           waypoints: waypts,
           optimizeWaypoints: true,
