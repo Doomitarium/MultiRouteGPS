@@ -94,8 +94,7 @@ body {
         placeholder="Enter a destination location">
  
     <input id="waypoint-input" class="controls" type="text"
-        placeholder="Add a waypoint">
-  <input type="text" id="waypoint-input" oninput="myFunction()">
+        placeholder="Add a waypoint" oninput="myFunction()">
   <br>
       <input type="submit" id="submit">
     </div>
@@ -272,7 +271,7 @@ function closeNav() {
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-    this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
+        this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     
@@ -340,7 +339,7 @@ function closeNav() {
         });
       };
      function myFunction(){
-        waypts = [];
+        waypts = [22];
         
             waypts.push({
               location: document.getElementById('waypoint-input').value,
