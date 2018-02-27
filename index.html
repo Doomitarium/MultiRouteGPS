@@ -289,8 +289,9 @@ function closeNav() {
             originInput, {placeIdOnly: true});
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
+      var waypointAutocomplete = [];
       for (i = 1; i < 23; i++){
-        window["waypointAutocomplete" + i] = new google.maps.places.Autocomplete(
+         waypointAutocomplete[i]= new google.maps.places.Autocomplete(
             window["waypointInput" + i], {placeIdOnly: true});
       }
         this.setupClickListener('changemode-walking', 'WALKING');
