@@ -299,7 +299,7 @@ function closeNav() {
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
         for (i = 1; i < 23; i++){
-        this.setupPlaceChangedListener(window["waypointAutocomplete"+i], 'WAY');
+        this.setupPlaceChangedListener(waypointsAutocomplete[i], 'WAY');
       }
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
