@@ -278,7 +278,7 @@ function closeNav() {
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
         for (i = 1; i < 23; i++){
-        var waypointInput+i = document.getElementById('myText[i]');
+        var waypointInput = document.getElementById('myText[i]');
         }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
@@ -291,7 +291,7 @@ function closeNav() {
             destinationInput, {placeIdOnly: true});
       for (i = 0; i < 23; i++){
         var waypointAutocomplete = new google.maps.places.Autocomplete(
-            waypointInput+i, {placeIdOnly: true});
+            waypointInput, {placeIdOnly: true});
       }
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
