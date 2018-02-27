@@ -240,7 +240,7 @@ function closeNav() {
       }
        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var waypts = [];
-        var checkboxArray = document.getElementById('waypoints');
+        var checkboxArray = document.getElementById('waypoint-input');
         for (var i = 0; i < checkboxArray.length; i++) {
           if (checkboxArray.options[i].selected) {
             waypts.push({
