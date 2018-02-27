@@ -326,7 +326,7 @@ function closeNav() {
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-         waypoints: waypts,
+          waypoints: waypts,
          
          optimizeWaypoints: true,
           travelMode: this.travelMode
@@ -339,7 +339,7 @@ function closeNav() {
         });
       };
      function myFunction(){
-        var waypts = [22];
+          waypts = [22];
         
             waypts.push({
               location: document.getElementById('waypoint-input'),
