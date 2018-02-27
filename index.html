@@ -1,6 +1,7 @@
-  <!DOCTYPE html>
+   <!DOCTYPE html>
 <html>
   <head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <style>
 body {
@@ -94,7 +95,7 @@ body {
         placeholder="Enter a destination location">
  
     <input id="waypoint-input" class="controls" type="text"
-        placeholder="Add a waypoint" oninput="myFunction()">
+        placeholder="Add a waypoint">
   <br>
       <input type="submit" id="submit">
     </div>
@@ -271,7 +272,7 @@ function closeNav() {
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-        this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
+    this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     
@@ -318,11 +319,20 @@ function closeNav() {
           return;
         }
         var me = this;
+       
+       
+       
+       var waypts = [];
+        
+            waypts.push({
+              location: document.getElementById('waypoint-input').value,
+              stopover: true
+            });
           
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-          waypoints: waypts,
+         waypoints: waypts,
          
          optimizeWaypoints: true,
           travelMode: this.travelMode
@@ -334,14 +344,7 @@ function closeNav() {
           }
         });
       };
-     function myFunction(){
-          waypts = new Array(22);
-        
-            waypts.push({
-              location: document.getElementById('waypoint-input').value,
-              stopover: true
-            });
-     }
+     
      
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
