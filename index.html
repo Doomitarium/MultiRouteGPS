@@ -266,10 +266,9 @@ function closeNav() {
      }
 
 
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
+
 
            new AutocompleteDirectionsHandler(map);
-       
        
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
@@ -295,18 +294,6 @@ function closeNav() {
         }
        
       
-
-       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        var waypts = [];
-        var checkboxArray = document.getElementById('waypoint-input');
-        for (var i = 0; i < checkboxArray.length; i++) {
-          if (checkboxArray.options[i].selected) {
-            waypts.push({
-              location: checkboxArray[i].value,
-              stopover: true
-            });
-          }
-        }
 
         directionsService.route({
           origin: document.getElementById('start').value,
