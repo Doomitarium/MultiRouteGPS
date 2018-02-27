@@ -292,14 +292,14 @@ function closeNav() {
       var waypointAutocomplete = [];
       for (i = 1; i < 23; i++){
          waypointAutocomplete[i]= new google.maps.places.Autocomplete(
-            window["waypointInput" + i], {placeIdOnly: true});
+            "waypointInput" + i, {placeIdOnly: true});
       }
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
         for (i = 1; i < 23; i++){
-        this.setupPlaceChangedListener(waypointsAutocomplete[i], 'WAY');
+        this.setupPlaceChangedListener(waypointAutocomplete[i], 'WAY');
       }
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
