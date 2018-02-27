@@ -209,6 +209,11 @@ function closeNav() {
           zoom: 13,
           mapTypeId: 'roadmap'
         });
+       directionsDisplay.setMap(map);
+
+  document.getElementById('submit').addEventListener('click', function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  });
        
         new AutocompleteDirectionsHandler(map);
        
