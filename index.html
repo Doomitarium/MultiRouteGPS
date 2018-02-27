@@ -212,7 +212,7 @@ function closeNav() {
        directionsDisplay.setMap(map);
 
   document.getElementById('submit').addEventListener('click', function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
+   new calculateAndDisplayRoute(directionsService, directionsDisplay);
   });
        
         new AutocompleteDirectionsHandler(map);
