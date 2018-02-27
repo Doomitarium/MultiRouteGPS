@@ -5,6 +5,127 @@
    <style>
 body {
     font-family: "Lato", sans-serif;
+1
+ <!DOCTYPE html>
+2
+<html>
+3
+  <head>
+4
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+5
+   <style>
+6
+body {
+7
+    font-family: "Lato", sans-serif;
+8
+    background-color: #111;
+9
+}
+10
+.sidenav {
+11
+    height: 100%;
+12
+    width: 0;
+13
+    position: fixed;
+14
+    z-index: 1;
+15
+    top: 0;
+16
+    left: 0;
+17
+    background-color: #111;
+18
+    overflow-x: hidden;
+19
+    transition: 0.5s;
+20
+    padding-top: 60px;
+21
+}
+22
+.sidenav a {
+23
+    padding: 8px 8px 8px 32px;
+24
+    text-decoration: none;
+25
+    font-size: 25px;
+26
+    color: #818181;
+27
+    display: block;
+28
+    transition: 0.3s;
+29
+}
+30
+.sidenav a:hover {
+31
+    color: #f1f1f1;
+32
+}
+33
+.sidenav .closebtn {
+34
+    position: absolute;
+35
+    top: 0;
+36
+    right: 25px;
+37
+    font-size: 36px;
+38
+    margin-left: 50px;
+39
+}
+40
+    
+41
+    .controls {
+42
+        margin-top: 10px;
+43
+        border: 1px solid transparent;
+44
+        border-radius: 2px 0 0 2px;
+45
+        box-sizing: border-box;
+46
+        -moz-box-sizing: border-box;
+47
+        height: 32px;
+48
+        outline: none;
+49
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+50
+      }
+51
+    
+52
+     #origin-input,
+53
+      #destination-input,
+54
+       #waypoint-input{
+55
+ 
+56
+        background-color: #fff;
+57
+        font-family: Roboto;
+58
+        font-size: 15px;
+59
+        font-weight: 300;
+60
+        margin-left: 12px;
+
     background-color: #111;
 }
 .sidenav {
@@ -50,7 +171,9 @@ body {
       }
     
      #origin-input,
-      #destination-input {
+      #destination-input,
+       #waypoint-input{
+ 
         background-color: #fff;
         font-family: Roboto;
         font-size: 15px;
@@ -61,7 +184,8 @@ body {
         width: 200px;
       }
       #origin-input:focus,
-      #destination-input:focus {
+      #destination-input:focus,
+      #waypoint-input:focus{
         border-color: #4d90fe;
       }
     
