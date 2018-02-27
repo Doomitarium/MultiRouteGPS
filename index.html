@@ -277,7 +277,9 @@ function closeNav() {
         this.optimizeWaypoints= true;
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
-        var waypointInput = document.getElementById('waypoint-input');
+        for (i = 1; i < 23; i++){
+        var waypointInput+i = document.getElementById('myText[i]');
+        }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
@@ -287,13 +289,15 @@ function closeNav() {
             originInput, {placeIdOnly: true});
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
+      for (i = 0; i < 23; i++){
         var waypointAutocomplete = new google.maps.places.Autocomplete(
-            waypointInput, {placeIdOnly: true});
+            waypointInput+i, {placeIdOnly: true});
+      }
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-    this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
+        this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     
@@ -343,13 +347,13 @@ function closeNav() {
        
        
        
-       var waypts = [];
-        
+       var waypts = [];document.getElementById("demo").innerHTML = waypts[i];
+        for(i = 1; i < 23; i++){
             waypts.push({
-              location: document.getElementById('waypoint-input').value,
+              location: document.getElementById('text[i]').value,
               stopover: true
             });
-          
+        }
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
