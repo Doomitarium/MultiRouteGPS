@@ -95,6 +95,7 @@ body {
  
     <input id="waypoint-input" class="controls" type="text"
         placeholder="Add a waypoint">
+  <input type="text" id="waypoint-input" oninput="myFunction()">
   <br>
       <input type="submit" id="submit">
     </div>
@@ -321,12 +322,7 @@ function closeNav() {
        
        
        
-       var waypts = [];
-        
-            waypts.push({
-              location: document.getElementById('waypoint-input').value,
-              stopover: true
-            });
+        myFunction();
           
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
@@ -343,7 +339,14 @@ function closeNav() {
           }
         });
       };
-     
+     function myFunction(){
+        waypts = [];
+        
+            waypts.push({
+              location: document.getElementById('waypoint-input').value,
+              stopover: true
+            });
+     }
      
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
