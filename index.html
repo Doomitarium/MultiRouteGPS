@@ -335,10 +335,10 @@ function closeNav() {
         });
       };
      function myFunction(){
-          waypts = [];
+          waypts = new Array(22);
         
             waypts.push({
-              location: document.getElementById('waypoint-input'),
+              location: document.getElementById('waypoint-input').value,
               stopover: true
             });
      }
