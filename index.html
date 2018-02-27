@@ -319,7 +319,7 @@ function closeNav() {
         if (!this.originPlaceId || !this.destinationPlaceId) {
           return;
         }
-        var waypts= document.getElementById('waypoint-input');
+        var waypts[0]= document.getElementById('waypoint-input');
         var me = this;
         this.directionsService.route({
           origin: document.getElementById('origin-input').value,
