@@ -270,56 +270,6 @@ function closeNav() {
 
            new AutocompleteDirectionsHandler(map);
        
-      // var trafficLayer = new google.maps.TrafficLayer();
-      // trafficLayer.setMap(map);
-       var infoWindow = new google.maps.InfoWindow;
-       
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-       
-      
-
-        directionsService.route({
-          origin: document.getElementById('start').value,
-          destination: document.getElementById('end').value,
-          waypoints: waypts,
-          optimizeWaypoints: true,
-          travelMode: 'DRIVING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-            var route = response.routes[0];
-            var summaryPanel = document.getElementById('directions-panel');
-            summaryPanel.innerHTML = '';
-            // For each route, display summary information.
-            for (var i = 0; i < route.legs.length; i++) {
-              var routeSegment = i + 1;
-              summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-                  '</b><br>';
-              summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-              summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-              summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-            }
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
   }
      
    function AutocompleteDirectionsHandler(map) {
@@ -387,15 +337,12 @@ function closeNav() {
         if (!this.originPlaceId || !this.destinationPlaceId) {
           return;
         }
+        var waypts[];
         var checkboxArray = document.getElementById('waypoint-input');
-        for (var i = 0; i < checkboxArray.length; i++) {
-          if (checkboxArray.options[i].selected) {
             waypts.push({
-              location: checkboxArray[i].value,
+              location: checkboxArray.value,
               stopover: true
             });
-          }
-        }
         var me = this;
         this.directionsService.route({
           origin: document.getElementById('start').value,
