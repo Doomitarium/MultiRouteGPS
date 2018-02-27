@@ -1,64 +1,10 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <style>
 body {
     font-family: "Lato", sans-serif;
-    background-color: #111;
-}
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-    
-    .controls {
-       margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
-    
-     #origin-input,
-      #destination-input,
-       #waypoint-input{
- 
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-
     background-color: #111;
 }
 .sidenav {
@@ -104,9 +50,9 @@ body {
       }
     
      #origin-input,
-      #destination-input,
-       #waypoint-input{
- 
+     #destination-input,
+     #waypoint-input
+     {
         background-color: #fff;
         font-family: Roboto;
         font-size: 15px;
@@ -118,7 +64,8 @@ body {
       }
       #origin-input:focus,
       #destination-input:focus,
-      #waypoint-input:focus{
+      #waypoint-input:focus
+     {
         border-color: #4d90fe;
       }
     
@@ -148,10 +95,17 @@ body {
  
     <input id="waypoint-input" class="controls" type="text"
         placeholder="Add a waypoint">
+  <br>
+      <input type="submit" id="submit">
+    </div>
+ 
  
  <div id="mode-selector" class="controls">
       <input type="radio" name="type" id="changemode-walking" checked="checked">
       <label for="changemode-walking">Walking</label>
+
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
 
       <input type="radio" name="type" id="changemode-driving">
       <label for="changemode-driving">Driving</label>
@@ -255,16 +209,54 @@ function closeNav() {
 }
 </script>
 <script>
-  function AutocompleteDirectionsHandler(map) {
+      function initAutocomplete() { 
+     
+        var map = new google.maps.Map(document.getElementById('map'), {
+          mapTypeControl: false,
+          center: {lat: 41.8688, lng: -81},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+       
+        new AutocompleteDirectionsHandler(map);
+       
+       
+      // var trafficLayer = new google.maps.TrafficLayer();
+      // trafficLayer.setMap(map);
+       var infoWindow = new google.maps.InfoWindow;
+       
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+       
+      
+      }
+     
+   function AutocompleteDirectionsHandler(map) {
         this.map = map;
         this.originPlaceId = null;
+        this.waypointPlaceId = null;
         this.destinationPlaceId = null;
-        this.travelMode = 'WALKING';
-        this.waypoints= true;
         this.optimizeWaypoints= true;
+        this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
-        var destinationInput = document.getElementById('destination-input');
         var waypointInput = document.getElementById('waypoint-input');
+        var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
@@ -276,13 +268,18 @@ function closeNav() {
         var waypointAutocomplete = new google.maps.places.Autocomplete(
             waypointInput, {placeIdOnly: true});
         this.setupClickListener('changemode-walking', 'WALKING');
+        this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-        this.setupPlaceChangedListener(waypointAutocomplete, 'WAYPOINT');
+    this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+    
+    
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(waypointInput);
+    
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+    
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
       }
       // Sets a listener on a radio button to change the filter type on Places
@@ -306,65 +303,46 @@ function closeNav() {
           }
           if (mode === 'ORIG') {
             me.originPlaceId = place.place_id;
-          } else if(mode === 'DEST'){
-            me.destinationPlaceId = place.place_id;
+          } else if(mode === 'WAY') {
+                      me.waypointPlaceID = place.place_id;
           }
-          else{
-           me.waypointPlaceId = place.place_id;
-           
-          }
+         else
+         {
+          me.destinationPlaceId = place.place_id;
+         }
           me.route();
         });
       };
       AutocompleteDirectionsHandler.prototype.route = function() {
-        if (!this.originPlaceId || !this.destinationPlaceId) {
+        if (!this.originPlaceId || !this.destinationPlaceId || !this.waypointPlaceID) {
           return;
         }
-        var waypts = [];
-        waypts.push({
+        var me = this;
+       
+       
+       
+       var waypts = [];
+        
+            waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
             });
-        var me = this;
+          
         this.directionsService.route({
-          origin: document.getElementById('origin-input').value,
-          destination: document.getElementById('destination-input').value,
-          waypoints: waypts,
-          optimizeWaypoints: true,
-          travelMode: 'DRIVING'
+          origin: {'placeId': this.originPlaceId},
+          destination: {'placeId': this.destinationPlaceId},
+         waypoints: waypts,
+         
+         optimizeWaypoints: true,
+          travelMode: this.travelMode
         }, function(response, status) {
           if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-            var route = response.routes[0];
-            var summaryPanel = document.getElementById('directions-panel');
-            summaryPanel.innerHTML = '';
-            // For each route, display summary information.
-            for (var i = 0; i < route.legs.length; i++) {
-              var routeSegment = i + 1;
-              summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-                  '</b><br>';
-              summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-              summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-              summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-            }
+            me.directionsDisplay.setDirections(response);
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         });
-      }
-  function initAutocomplete() {
-  directionsService = new google.maps.DirectionsService;
-  directionsDisplay = new google.maps.DirectionsRenderer;
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 6,
-    center: {lat: 41.85, lng: -87.65}
-  });
-  directionsDisplay.setMap(map);
-  new AutocompleteDirectionsHandler(map);
-       
-  }
-     
-
+      };
      
      
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -376,7 +354,7 @@ function closeNav() {
       }
      
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places&callback=initAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKYUe87eb1WJwxTBvfmE2UfKyGUyRrHkM&libraries=places&callback=initAutocomplete"
          async defer></script>
   </body>
 </html>
