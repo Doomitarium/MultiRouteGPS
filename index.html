@@ -323,7 +323,7 @@ function closeNav() {
         waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
-        })
+        });
         var me = this;
         this.directionsService.route({
           origin: document.getElementById('origin-input').value,
