@@ -277,7 +277,7 @@ function closeNav() {
         this.optimizeWaypoints= true;
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
-        for (i = 1; i < 23; i++){
+        for (i = 0; i < 22; i++){
         window["waypointInput" + i] =document.getElementById('myText[i]');
         }
         var destinationInput = document.getElementById('destination-input');
@@ -290,7 +290,7 @@ function closeNav() {
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
       var waypointAutocomplete = [];
-      for (i = 1; i < 23; i++){
+      for (i = 0; i < 22; i++){
          waypointAutocomplete[i]= new google.maps.places.Autocomplete(
             "waypointInput" + i, {placeIdOnly: true});
       }
@@ -298,13 +298,13 @@ function closeNav() {
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-        for (i = 1; i < 23; i++){
+        for (i = 0; i < 22; i++){
         this.setupPlaceChangedListener(waypointAutocomplete[i], 'WAY');
       }
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     
-      for (i = 1; i < 23; i++){
+      for (i = 1; i < 22; i++){
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(window["waypointInput" + i]);
       }
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
