@@ -279,7 +279,7 @@ function closeNav() {
         var originInput = document.getElementById('origin-input');
         var vars = [];
         for (i = 0; i <= x; i++){
-        vars["waypointInput" + i] = document.getElementsByName('mytext[]')[i].value;
+        vars["waypointInput" + i] = document.getElementsByName('mytext[]')[i];
         }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
