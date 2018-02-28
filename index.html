@@ -289,7 +289,7 @@ function closeNav() {
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     
       for (i = 0; i <= x; i++){
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(window["waypointInput" + i]);
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(vars['waypointInput' + i]);
       }
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
     
@@ -337,7 +337,7 @@ function closeNav() {
        var waypts = [];
         for(i = 0; i <= x; i++){
             waypts.push({
-              location: document.getElementsByName('mytext[]')[i].value,
+              location: document.getElementsByName('mytext[]')[i],
               stopover: true
             });
         }
