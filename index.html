@@ -174,128 +174,141 @@
         this.originPlaceId = null;
         this.waypointPlaceId = null;
         this.destinationPlaceId = null;
-        this.optimizeWaypoints= true;
+        this.optimizeWaypoints = true;
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
-        var vars = [];
-        waypts = [];
-        for(i = 0; i <= x; i++){
-            waypts.push({
-              location: document.getElementsByName('mytext[]')[i],
-              stopover: true
-            });
-        }
         var waypointInput = document.getElementsByName('mytext[]')[0];
         if(x == 2){
-            var waypointInput1 = document.getElementsByName('mytext[]')[1];
-            var waypointAutocomplete1 = new google.maps.places.Autocomplete(
-            waypointInput1 ,{placeIdOnly: true});
+            var waypointInput2 = document.getElementsByName('mytext[]')[2];
+            var waypointAutocomplete2 = new google.maps.places.Autocomplete(
+            waypointInput2 ,{placeIdOnly: true});
+            this.setupPlaceChangedListener(waypointAutocomplete2, 'WAY2');
         }
        if(x == 3){ 
             var waypointInput3 = document.getElementsByName('mytext[]')[3]
             var waypointAutocomplete3 = new google.maps.places.Autocomplete(
             waypointInput3,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete3, 'WAY3');
         }
        if(x == 4){
            var waypointInput4 = document.getElementsByName('mytext[]')[4]
            var waypointAutocomplete4 = new google.maps.places.Autocomplete(
             waypointInput4,{placeIdOnly: true});
-            
+            this.setupPlaceChangedListener(waypointAutocomplete4, 'WAY4');
         }
        if(x == 5){
            var waypointInput5 = document.getElementsByName('mytext[]')[5]
            var waypointAutocomplete5 = new google.maps.places.Autocomplete(
             waypointInput5,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete5, 'WAY5');
         }
        if(x == 6){
            var waypointInput6 = document.getElementsByName('mytext[]')[6]
            var waypointAutocomplete6 = new google.maps.places.Autocomplete(
             waypointInput6,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete6, 'WAY6');
         }
        if(x == 7){
            var waypointInput7 = document.getElementsByName('mytext[]')[7]
            var waypointAutocomplete7 = new google.maps.places.Autocomplete(
             waypointInput7,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete7, 'WAY7');
         }
        if(x == 8){
            var waypointInput8 = document.getElementsByName('mytext[]')[8]
            var waypointAutocomplete8 = new google.maps.places.Autocomplete(
             waypointInput8,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete8, 'WAY8');
         }
        if(x == 9){
            var waypointInput9 = document.getElementsByName('mytext[]')[9]
            var waypointAutocomplete9 = new google.maps.places.Autocomplete(
             waypointInput9,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete9, 'WAY9');
         }
        if(x == 10){
            var waypointInput10 = document.getElementsByName('mytext[]')[10]
            var waypointAutocomplete10 = new google.maps.places.Autocomplete(
             waypointInput10,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete10, 'WAY10');
         }
        if(x == 11){
            var waypointInput11 = document.getElementsByName('mytext[]')[11]
            var waypointAutocomplete11 = new google.maps.places.Autocomplete(
             waypointInput11,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete11, 'WAY11');
         }
        if(x == 12){
            var waypointInput12 = document.getElementsByName('mytext[]')[12]
            var waypointAutocomplete12 = new google.maps.places.Autocomplete(
             waypointInput12,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete12, 'WAY12');
         }
        if(x == 13){
            var waypointInput13 = document.getElementsByName('mytext[]')[13]
            var waypointAutocomplete13 = new google.maps.places.Autocomplete(
             waypointInput13,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete13, 'WAY13');
         }
        if(x == 14){
            var waypointInput14 = document.getElementsByName('mytext[]')[14]
            var waypointAutocomplete14 = new google.maps.places.Autocomplete(
             waypointInput14,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete14, 'WAY14');
         }
        if(x == 15){
            var waypointInput15 = document.getElementsByName('mytext[]')[15]
            var waypointAutocomplete15 = new google.maps.places.Autocomplete(
             waypointInput15,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete15, 'WAY15');
         }
        if(x == 16){
            var waypointInput16 = document.getElementsByName('mytext[]')[16]
-           var waypointAutocomplete6 = new google.maps.places.Autocomplete(
+           var waypointAutocomplete16 = new google.maps.places.Autocomplete(
             waypointInput16,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete16, 'WAY16');
         }
        if(x == 17){
            var waypointInput17 = document.getElementsByName('mytext[]')[17]
            var waypointAutocomplete17 = new google.maps.places.Autocomplete(
             waypointInput17,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete17, 'WAY17');
         }
        if(x == 18){
            var waypointInput18 = document.getElementsByName('mytext[]')[18]
            var waypointAutocomplete18 = new google.maps.places.Autocomplete(
             waypointInput18,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete18, 'WAY18');
         }
        if(x == 19){
            var waypointInput19 = document.getElementsByName('mytext[]')[19]
            var waypointAutocomplete19 = new google.maps.places.Autocomplete(
             waypointInput19,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete19, 'WAY19');
         }
        if(x == 20){
            var waypointInput20 = document.getElementsByName('mytext[]')[20]
            var waypointAutocomplete20 = new google.maps.places.Autocomplete(
             waypointInput20,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete20, 'WAY10');
         }
        if(x == 21){
            var waypointInput21 = document.getElementsByName('mytext[]')[21]
            var waypointAutocomplete21 = new google.maps.places.Autocomplete(
             waypointInput21,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete21, 'WAY21');
         }
        if(x == 22){
            var waypointInput22 = document.getElementsByName('mytext[]')[22]
            var waypointAutocomplete22 = new google.maps.places.Autocomplete(
             waypointInput22,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete22, 'WAY22');
         }
        if(x == 23){
            var waypointInput23 = document.getElementsByName('mytext[]')[23]
            var waypointAutocomplete23 = new google.maps.places.Autocomplete(
             waypointInput23,{placeIdOnly: true});
+           this.setupPlaceChangedListener(waypointAutocomplete23, 'WAY23');
         }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
@@ -361,7 +374,7 @@
        var waypts = [];
         for(var i = 0; i <=x; i++){
             waypts.push({
-              location: document.getElementsByName('mytext[]')[i].value,
+              location: document.getElementsByName('mytext[]')[i],
               stopover: true
             });
         }
