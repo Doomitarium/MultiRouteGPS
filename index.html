@@ -203,8 +203,14 @@
             
         }
        if(x == 5){
+           var waypointInput5 = document.getElementsByName('mytext[]')[5]
+           var waypointAutocomplete5 = new google.maps.places.Autocomplete(
+            waypointInput5,{placeIdOnly: true});
         }
        if(x == 6){
+           var waypointInput6 = document.getElementsByName('mytext[]')[6]
+           var waypointAutocomplete6 = new google.maps.places.Autocomplete(
+            waypointInput6,{placeIdOnly: true});
         }
        if(x == 7){
         }
@@ -283,6 +289,8 @@
           }
           if (mode === 'ORIG') {
             me.originPlaceId = place.place_id;
+          } else if(mode === 'WAY') {
+                      me.waypointPlaceID = place.place_id;
           }
          else
          {
@@ -292,22 +300,27 @@
         });
       };
       AutocompleteDirectionsHandler.prototype.route = function() {
-        if (!this.originPlaceId || !this.destinationPlaceId) {
+        if (!this.originPlaceId || !this.destinationPlaceId || !this.waypointPlaceID) {
           return;
         }
         var me = this;
-          for(i = 0; i <= x; i++){
+       
+       
+       
+       var waypts = [];
+        
             waypts.push({
-              location: document.getElementsByName('mytext[]')[i],
+              location: document.getElementById('waypoint-input').value,
               stopover: true
             });
-         this.directionsService.route({
+          
+        this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-          waypoints: waypts,
+         waypoints: waypts,
          
          optimizeWaypoints: true,
-         travelMode: this.travelMode
+          travelMode: this.travelMode
         }, function(response, status) {
           if (status === 'OK') {
             me.directionsDisplay.setDirections(response);
@@ -325,7 +338,6 @@
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
-     
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKYUe87eb1WJwxTBvfmE2UfKyGUyRrHkM&libraries=places&callback=initAutocomplete"
          async defer></script>
