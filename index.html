@@ -194,7 +194,13 @@
             });
         }
         var destinationInput = document.getElementById('destination-input');
-        var waypointInput = document.getElementsByName('mytext[]')[0];
+        var waypointInput = [];
+        for(i = 0; i <= x; i++){
+            waypointInput.push({
+              document.getElementsByName('mytext[]')[i];
+            });
+        }
+        document.getElementsByName('mytext[]')[0];
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
@@ -203,8 +209,12 @@
             originInput, {placeIdOnly: true});
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
-         var waypointAutocomplete = new google.maps.places.Autocomplete(
-            waypointInput, {placeIdOnly: true});
+        var waypointAutocomplete =[];
+      for(i = 0; i <= x; i++){
+            waypointAutocomplete.push({
+            waypointInput[i], {placeIdOnly: true}
+            });
+        }
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
@@ -213,7 +223,6 @@
         this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(waypointInput);
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
       }
       // Sets a listener on a radio button to change the filter type on Places
@@ -253,7 +262,7 @@
         }
         var me = this;
          for(i = 0; i <= x; i++){
-            me.waypts.push({
+            waypts.push({
               location: document.getElementsByName('mytext[]')[i],
               stopover: true
             });
