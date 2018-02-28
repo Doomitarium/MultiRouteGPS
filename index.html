@@ -308,12 +308,12 @@
        
        
        var waypts = [];
-        
+        for(var i = 0; i <=x; i++){
             waypts.push({
-              location: document.getElementById('waypoint-input').value,
+              location: getElementsByName('mytext[]')[i].value,
               stopover: true
             });
-          
+        }
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
