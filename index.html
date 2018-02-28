@@ -149,10 +149,6 @@ body {
 }
 </style>
   </head>
-<div class="input_fields_wrap">
-    <button class="add_field_button">Add More Waypoints</button>
-    <div><input type="text" name="mytext[]"></div>
-</div>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">CURRENT LOCATION</a>
@@ -187,6 +183,10 @@ body {
 
 
   <body>
+    <div class="input_fields_wrap">
+    <button class="add_field_button">Add More Fields</button>
+    <div><input type="text" name="mytext[]"></div>
+       </div>
        <script>
    $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
@@ -201,10 +201,8 @@ body {
             $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
-    <div class="input_fields_wrap">
-    <button class="add_field_button">Add More Fields</button>
-    <div><input type="text" name="mytext[]"></div>
-</div>
+    
+
    </script>
        <script>
 function openNav() {
