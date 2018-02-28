@@ -186,7 +186,6 @@
         this.optimizeWaypoints= true;
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
-        var vars = [];
         waypts = [];
         for(i = 0; i <= x; i++){
             waypts.push({
@@ -253,6 +252,12 @@
           return;
         }
         var me = this;
+         for(i = 0; i <= x; i++){
+            this.waypts.push({
+              location: document.getElementsByName('mytext[]')[i],
+              stopover: true
+            });
+        }
          
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
