@@ -194,7 +194,7 @@
             });
         }
         var destinationInput = document.getElementById('destination-input');
-        var waypointInput = waypts;
+        var waypointInput = waypts.slice(0);
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
@@ -206,7 +206,7 @@
         var waypointAutocomplete =[];
       for(i = 0; i <= x; i++){
             waypointAutocomplete.push({
-            waypointInput[i], {placeIdOnly: true}
+            waypointInput.pop(), {placeIdOnly: true}
             });
         }
         this.setupClickListener('changemode-walking', 'WALKING');
