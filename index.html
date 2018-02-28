@@ -18,7 +18,7 @@
       }
 
       html, body {
-        height: 80%;
+        height: 90%;
         margin: 0;
         padding: 0;
       }
@@ -195,6 +195,7 @@
             });
         }
         var destinationInput = document.getElementById('destination-input');
+        var waypointInput = document.getElementsByName('mytext[]')[0];
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
@@ -203,11 +204,14 @@
             originInput, {placeIdOnly: true});
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
+         var waypointAutocomplete = new google.maps.places.Autocomplete(
+            waypointInput, {placeIdOnly: true});
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+        this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
@@ -234,15 +238,17 @@
           if (mode === 'ORIG') {
             me.originPlaceId = place.place_id;
           }
-         else
-         {
+           else if (mode === 'WAY'){
+              me.waypointPlaceId = place.place_id;
+           }
+           else if (mode === 'DEST')
           me.destinationPlaceId = place.place_id;
          }
           me.route();
         });
       };
       AutocompleteDirectionsHandler.prototype.route = function() {
-        if (!this.originPlaceId || !this.destinationPlaceId) {
+        if (!this.originPlaceId || !this.destinationPlaceId || !this.waypointPlaceId) {
           return;
         }
         var me = this;
