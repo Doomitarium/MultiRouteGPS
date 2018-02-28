@@ -204,8 +204,7 @@
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
         var waypointAutocomplete = new google.maps.places.Autocomplete(
-            waypointInput.pop(), {placeIdOnly: true}
-            });
+            waypointInput.pop(), {placeIdOnly: true});
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
