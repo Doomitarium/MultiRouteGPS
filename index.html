@@ -187,16 +187,19 @@
         }
         var waypointInput = document.getElementsByName('mytext[]')[0];
         if(x == 2){
+            var waypointInput1 = document.getElementsByName('mytext[]')[1];
             var waypointAutocomplete1 = new google.maps.places.Autocomplete(
-            var waypointInput1 = document.getElementsByName('mytext[]')[1];,{placeIdOnly: true});
+            waypointInput1 ,{placeIdOnly: true});
         }
        if(x == 3){ 
+            var waypointInput3 = document.getElementsByName('mytext[]')[3]
             var waypointAutocomplete3 = new google.maps.places.Autocomplete(
-            var waypointInput3 = document.getElementsByName('mytext[]')[3],{placeIdOnly: true});
+            waypointInput3,{placeIdOnly: true});
         }
        if(x == 4){
+           var waypointInput4 = document.getElementsByName('mytext[]')[4]
            var waypointAutocomplete4 = new google.maps.places.Autocomplete(
-            var waypointInput4 = document.getElementsByName('mytext[]')[4] ,{placeIdOnly: true});
+            waypointInput4,{placeIdOnly: true});
             
         }
        if(x == 5){
