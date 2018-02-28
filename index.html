@@ -199,7 +199,7 @@
         var originInput = document.getElementById('origin-input');
         var vars = [];
         for (i = 0; i <= x; i++){
-        vars[i] = document.getElementsByName('mytext[]')[i];
+        waypts[i] = document.getElementsByName('mytext[]')[i];
         }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
@@ -215,7 +215,7 @@
       
     for (i = 0; i <= x; i++){
          var waypointAutocomplete = new google.maps.places.Autocomplete(
-            vars[i], {placeIdOnly: true});
+            waypts[i], {placeIdOnly: true});
     }
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
@@ -273,7 +273,7 @@
        
        
        
-       var waypts = [];
+        waypts = [];
         for(i = 0; i <= x; i++){
             waypts.push({
               location: document.getElementsByName('mytext[]')[i],
