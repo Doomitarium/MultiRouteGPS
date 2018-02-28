@@ -200,13 +200,9 @@
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
- 
+        this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-    
-      for (i = 0; i <= x; i++){
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(waypts[i]);
-      }
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
     
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
@@ -249,7 +245,7 @@
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-          waypoints: this.waypts,
+          waypoints: {'placeId': this.waypts,},
          
          optimizeWaypoints: true,
          travelMode: this.travelMode
