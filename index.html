@@ -177,6 +177,13 @@
         this.destinationPlaceId = null;
         this.optimizeWaypoints = true;
         this.travelMode = 'WALKING';
+        waypts = [];
+        for(var i = 0; i <=x; i++){
+            waypts.push({
+              location: document.getElementsByName('mytext[]')[i],
+              stopover: true
+            });
+        }
         var originInput = document.getElementById('origin-input');
         var waypointInput = document.getElementsByName('mytext[]')[0];
         if(x == 2){
@@ -376,7 +383,7 @@
        
        
        
-       var waypts = [];
+       waypts = [];
         for(var i = 0; i <=x; i++){
             waypts.push({
               location: document.getElementsByName('mytext[]')[i],
