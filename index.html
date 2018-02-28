@@ -197,10 +197,9 @@
         var waypointInput = [];
         for(i = 0; i <= x; i++){
             waypointInput.push({
-              document.getElementsByName('mytext[]')[i];
+              document.getElementsByName('mytext[]')[i].value;
             });
         }
-        document.getElementsByName('mytext[]')[0];
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
