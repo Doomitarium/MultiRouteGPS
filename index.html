@@ -8,17 +8,12 @@
    <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      body {
-    font-family: "Lato", sans-serif;
-    background-color: #111;
-}
-      /* Optional: Makes the sample page fill the window. */
-     #map {
+      #map {
         height: 100%;
       }
-
+      /* Optional: Makes the sample page fill the window. */
       html, body {
-        height: 90%;
+        height: 100%;
         margin: 0;
         padding: 0;
       }
@@ -133,11 +128,8 @@
       })
    });
     
-
    
-
    
-
       </script>
        <script>
     function initAutocomplete() { 
@@ -186,6 +178,7 @@
         this.optimizeWaypoints= true;
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
+        var vars = [];
         waypts = [];
         for(i = 0; i <= x; i++){
             waypts.push({
@@ -194,7 +187,6 @@
             });
         }
         var destinationInput = document.getElementById('destination-input');
-        var waypointInput = waypts.slice(0);
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
@@ -204,15 +196,20 @@
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
         var waypointAutocomplete = new google.maps.places.Autocomplete(
-            waypointInput.pop(), {placeIdOnly: true});
+            waypts[0],{placeIdOnly: true});
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+ 
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
-        this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+    
+      for (i = 0; i <= x; i++){
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(waypts[i]);
+      }
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+    
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
       }
       // Sets a listener on a radio button to change the filter type on Places
@@ -237,31 +234,23 @@
           if (mode === 'ORIG') {
             me.originPlaceId = place.place_id;
           }
-           else if (mode === 'WAY'){
-              me.waypointPlaceId = place.place_id;
-           }
-           else if (mode === 'DEST'){
+         else
+         {
           me.destinationPlaceId = place.place_id;
          }
           me.route();
         });
       };
       AutocompleteDirectionsHandler.prototype.route = function() {
-        if (!this.originPlaceId || !this.destinationPlaceId || !this.waypointPlaceId) {
+        if (!this.originPlaceId || !this.destinationPlaceId) {
           return;
         }
         var me = this;
-         for(i = 0; i <= x; i++){
-            waypts.push({
-              location: document.getElementsByName('mytext[]')[i],
-              stopover: true
-            });
-        }
          
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-          waypoints: waypts,
+          waypoints: this.waypts,
          
          optimizeWaypoints: true,
          travelMode: this.travelMode
