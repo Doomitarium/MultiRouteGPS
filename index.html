@@ -189,7 +189,7 @@ body {
   <body>
        <script>
    $(document).ready(function() {
-    var max_fields      = 23; //maximum input boxes allowed
+    var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
     
@@ -205,10 +205,7 @@ body {
     <button class="add_field_button">Add More Fields</button>
     <div><input type="text" name="mytext[]"></div>
 </div>
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-});
+   
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
