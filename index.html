@@ -256,7 +256,9 @@
           if (mode === 'ORIG') {
             me.originPlaceId = place.place_id;
           } else if(mode === 'WAY') {
+             for(i = 0; i <= x; i++){
                       me.waypointPlaceID = place.place_id;
+             }
           }
          else
          {
@@ -266,7 +268,7 @@
         });
       };
       AutocompleteDirectionsHandler.prototype.route = function() {
-        if (!this.originPlaceId || !this.destinationPlaceId) {
+        if (!this.originPlaceId || !this.destinationPlaceId || !this.waypointPlaceID) {
           return;
         }
         var me = this;
