@@ -124,7 +124,7 @@ body {
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
     
-    var x = 1; //initlal text box count
+    x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
@@ -278,7 +278,7 @@ function closeNav() {
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
         var vars = [];
-        for (i = 0; i < 22; i++){
+        for (i = 0; i <= x; i++){
         vars["waypointInput" + i] = document.getElementsByName('mytext[]')[i].value;
         }
         var destinationInput = document.getElementById('destination-input');
@@ -301,13 +301,13 @@ function closeNav() {
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-        for (i = 0; i < 22; i++){
+        for (i = 0; i <= x; i++){
         this.setupPlaceChangedListener(waypointAutocomplete[i], 'WAY');
       }
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     
-      for (i = 1; i < 22; i++){
+      for (i = 0; i <= x; i++){
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(window["waypointInput" + i]);
       }
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
@@ -354,13 +354,10 @@ function closeNav() {
        
        
        var waypts = [];
-        for(i = 1; i < 23; i++){
+        for(i = 0; i <= x; i++){
             waypts.push({
               location: document.getElementsByName('mytext[]')[i].value,
-                  if (document.getElementsByName('mytext[]')[i].value === 'null'){
-              stopover = false
-            } else 
-                  stopover = true
+              stopover = true
             });
         }
         this.directionsService.route({
