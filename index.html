@@ -178,6 +178,13 @@
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
         var vars = [];
+        waypts = [];
+        for(i = 0; i <= x; i++){
+            waypts.push({
+              location: document.getElementsByName('mytext[]')[i],
+              stopover: false
+            });
+        }
         for (i = 0; i <= x; i++){
         waypts[i] = document.getElementsByName('mytext[]')[i];
         }
@@ -250,16 +257,7 @@
           return;
         }
         var me = this;
-       
-       
-       
-        waypts = [];
-        for(i = 0; i <= x; i++){
-            waypts.push({
-              location: document.getElementsByName('mytext[]')[i],
-              stopover: false
-            });
-        }
+         
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
