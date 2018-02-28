@@ -213,38 +213,89 @@
             waypointInput6,{placeIdOnly: true});
         }
        if(x == 7){
+           var waypointInput7 = document.getElementsByName('mytext[]')[7]
+           var waypointAutocomplete7 = new google.maps.places.Autocomplete(
+            waypointInput7,{placeIdOnly: true});
         }
        if(x == 8){
+           var waypointInput8 = document.getElementsByName('mytext[]')[8]
+           var waypointAutocomplete8 = new google.maps.places.Autocomplete(
+            waypointInput8,{placeIdOnly: true});
         }
        if(x == 9){
+           var waypointInput9 = document.getElementsByName('mytext[]')[9]
+           var waypointAutocomplete9 = new google.maps.places.Autocomplete(
+            waypointInput9,{placeIdOnly: true});
         }
        if(x == 10){
+           var waypointInput10 = document.getElementsByName('mytext[]')[10]
+           var waypointAutocomplete10 = new google.maps.places.Autocomplete(
+            waypointInput10,{placeIdOnly: true});
         }
        if(x == 11){
+           var waypointInput11 = document.getElementsByName('mytext[]')[11]
+           var waypointAutocomplete11 = new google.maps.places.Autocomplete(
+            waypointInput11,{placeIdOnly: true});
         }
        if(x == 12){
+           var waypointInput12 = document.getElementsByName('mytext[]')[12]
+           var waypointAutocomplete12 = new google.maps.places.Autocomplete(
+            waypointInput12,{placeIdOnly: true});
         }
        if(x == 13){
+           var waypointInput13 = document.getElementsByName('mytext[]')[13]
+           var waypointAutocomplete13 = new google.maps.places.Autocomplete(
+            waypointInput13,{placeIdOnly: true});
         }
        if(x == 14){
+           var waypointInput14 = document.getElementsByName('mytext[]')[14]
+           var waypointAutocomplete14 = new google.maps.places.Autocomplete(
+            waypointInput14,{placeIdOnly: true});
         }
        if(x == 15){
+           var waypointInput15 = document.getElementsByName('mytext[]')[15]
+           var waypointAutocomplete15 = new google.maps.places.Autocomplete(
+            waypointInput15,{placeIdOnly: true});
         }
        if(x == 16){
+           var waypointInput16 = document.getElementsByName('mytext[]')[16]
+           var waypointAutocomplete6 = new google.maps.places.Autocomplete(
+            waypointInput16,{placeIdOnly: true});
         }
        if(x == 17){
+           var waypointInput17 = document.getElementsByName('mytext[]')[17]
+           var waypointAutocomplete17 = new google.maps.places.Autocomplete(
+            waypointInput17,{placeIdOnly: true});
         }
        if(x == 18){
+           var waypointInput18 = document.getElementsByName('mytext[]')[18]
+           var waypointAutocomplete18 = new google.maps.places.Autocomplete(
+            waypointInput18,{placeIdOnly: true});
         }
        if(x == 19){
+           var waypointInput19 = document.getElementsByName('mytext[]')[19]
+           var waypointAutocomplete19 = new google.maps.places.Autocomplete(
+            waypointInput19,{placeIdOnly: true});
         }
        if(x == 20){
+           var waypointInput20 = document.getElementsByName('mytext[]')[20]
+           var waypointAutocomplete20 = new google.maps.places.Autocomplete(
+            waypointInput20,{placeIdOnly: true});
         }
        if(x == 21){
+           var waypointInput21 = document.getElementsByName('mytext[]')[21]
+           var waypointAutocomplete21 = new google.maps.places.Autocomplete(
+            waypointInput21,{placeIdOnly: true});
         }
        if(x == 22){
+           var waypointInput22 = document.getElementsByName('mytext[]')[22]
+           var waypointAutocomplete22 = new google.maps.places.Autocomplete(
+            waypointInput22,{placeIdOnly: true});
         }
        if(x == 23){
+           var waypointInput23 = document.getElementsByName('mytext[]')[23]
+           var waypointAutocomplete23 = new google.maps.places.Autocomplete(
+            waypointInput23,{placeIdOnly: true});
         }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
@@ -310,7 +361,7 @@
        var waypts = [];
         for(var i = 0; i <=x; i++){
             waypts.push({
-              location: getElementsByName('mytext[]')[i].value,
+              location: document.getElementsByName('mytext[]')[i].value,
               stopover: true
             });
         }
