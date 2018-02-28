@@ -253,7 +253,7 @@
         }
         var me = this;
          for(i = 0; i <= x; i++){
-            this.waypts.push({
+            waypts.push({
               location: document.getElementsByName('mytext[]')[i],
               stopover: true
             });
@@ -262,7 +262,7 @@
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-          waypoints: this.waypts,
+          waypoints: waypts,
          
          optimizeWaypoints: true,
          travelMode: this.travelMode
