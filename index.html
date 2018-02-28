@@ -194,12 +194,7 @@
             });
         }
         var destinationInput = document.getElementById('destination-input');
-        var waypointInput = [];
-        for(i = 0; i <= x; i++){
-            waypointInput.push({
-              waypts.[i];
-            });
-        }
+        var waypointInput = waypts;
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
