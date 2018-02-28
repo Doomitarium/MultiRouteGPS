@@ -279,7 +279,7 @@
         for(i = 0; i <= x; i++){
             waypts.push({
               location: document.getElementsByName('mytext[]')[i],
-              stopover: true
+              stopover: false
             });
         }
         this.directionsService.route({
