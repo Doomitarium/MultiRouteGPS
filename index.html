@@ -134,7 +134,7 @@
        <script>
     function initAutocomplete() { 
      
-         var map = new google.maps.Map(document.getElementById('map'), {
+         map = new google.maps.Map(document.getElementById('map'), {
           mapTypeControl: false,
           center: {lat: 41.8688, lng: -81},
           zoom: 13,
@@ -180,8 +180,8 @@
         var originInput = document.getElementById('origin-input');
         var waypointInput = document.getElementsByName('mytext[]')[0];
         if(x == 2){
-            var waypointInput2 = document.getElementsByName('mytext[]')[1];
-            var waypointAutocomplete2 = new google.maps.places.Autocomplete(
+            waypointInput2 = document.getElementsByName('mytext[]')[1];
+            waypointAutocomplete2 = new google.maps.places.Autocomplete(
             waypointInput2 ,{placeIdOnly: true});
             this.setupPlaceChangedListener(waypointAutocomplete2, 'WAY2');
             this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(waypointInput2);
