@@ -177,7 +177,7 @@
         this.optimizeWaypoints = true;
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
-        var waypointInput = document.getElementsByName('mytext[]')[0];
+        var waypointInput = document.getElementsByName('mytext[]')[1];
         if(x == 2){
             var waypointInput2 = document.getElementsByName('mytext[]')[2];
             var waypointAutocomplete2 = new google.maps.places.Autocomplete(
@@ -372,7 +372,7 @@
        
        
        var waypts = [];
-        for(var i = 0; i <=x; i++){
+        for(var i = 1; i <=x; i++){
             waypts.push({
               location: document.getElementsByName('mytext[]')[i],
               stopover: true
