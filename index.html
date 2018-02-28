@@ -233,7 +233,7 @@ function closeNav() {
 <script>
       function initAutocomplete() { 
      
-        var map = new google.maps.Map(document.getElementById('map'), {
+         map = new google.maps.Map(document.getElementById('map'), {
           mapTypeControl: false,
           center: {lat: 41.8688, lng: -81},
           zoom: 13,
@@ -278,7 +278,7 @@ function closeNav() {
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
         for (i = 0; i < 22; i++){
-        window["waypointInput" + i] =document.getElementById('myText[i]');
+        window[var "waypointInput" + i](document.getElementById('myText[i]');
         }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
