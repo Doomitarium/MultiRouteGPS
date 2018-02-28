@@ -198,23 +198,17 @@
             originInput, {placeIdOnly: true});
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
-       
-     
       
-    for (i = 0; i <= x; i++){
-         var waypointAutocomplete = new google.maps.places.Autocomplete(
-            waypts[i], {placeIdOnly: true});
-    }
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-        this.setupPlaceChangedListener(waypointAutocomplete, 'WAY');
+ 
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     
       for (i = 0; i <= x; i++){
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(vars[i]);
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(waypts[i]);
       }
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
     
