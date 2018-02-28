@@ -189,7 +189,7 @@
         waypts = [];
         for(i = 0; i <= x; i++){
             waypts.push({
-              location: document.getElementsByName('mytext[]')[i],
+              location: document.getElementsByName('mytext[]')[i].value,
               stopover: true
             });
         }
@@ -254,7 +254,7 @@
         var me = this;
          for(i = 0; i <= x; i++){
             waypts.push({
-              location: document.getElementsByName('mytext[]')[i],
+              location: document.getElementsByName('mytext[]')[i].value,
               stopover: true
             });
         }
