@@ -80,7 +80,7 @@ body {
 <body>
 <div class="input_fields_wrap">
     <button class="add_field_button">Add More Waypoints</button>
-    <div><input id="waypoints[]" type="text" name="mytext[]"></div>
+    <div><input type="text" name="mytext[]"></div>
 </div>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -279,7 +279,7 @@ function closeNav() {
         var originInput = document.getElementById('origin-input');
         var vars = [];
         for (i = 0; i < 22; i++){
-        vars["waypointInput" + i] = document.getElementsByName('mytext[]')[i];
+        vars["waypointInput" + i] = document.getElementsByName('mytext[]')[i].value;
         }
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
@@ -357,7 +357,10 @@ function closeNav() {
         for(i = 1; i < 23; i++){
             waypts.push({
               location: document.getElementsByName('mytext[]')[i].value,
-              stopover: true
+                  if (document.getElementsByName('mytext[]')[i].value === null){
+              stopover = false
+            } else 
+                  stopover = true
             });
         }
         this.directionsService.route({
