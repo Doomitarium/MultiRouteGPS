@@ -185,6 +185,7 @@
               stopover: true
             });
         }
+        var waypointInput = document.getElementsByName('mytext[]')[0]);
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
         this.directionsService = new google.maps.DirectionsService;
@@ -195,7 +196,7 @@
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
         var waypointAutocomplete = new google.maps.places.Autocomplete(
-            waypts[0],{placeIdOnly: true});
+            waypointInput,{placeIdOnly: true});
         this.setupClickListener('changemode-walking', 'WALKING');
         this.setupClickListener('changemode-transit', 'TRANSIT');
         this.setupClickListener('changemode-driving', 'DRIVING');
