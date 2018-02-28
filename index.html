@@ -201,7 +201,10 @@ body {
             $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
-    
+    <div class="input_fields_wrap">
+    <button class="add_field_button">Add More Fields</button>
+    <div><input type="text" name="mytext[]"></div>
+</div>
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
@@ -212,12 +215,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+
      function initAutocomplete() { 
      
          map = new google.maps.Map(document.getElementById('map'), {
