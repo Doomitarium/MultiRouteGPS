@@ -285,7 +285,7 @@
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-         waypoints: waypts,
+         waypoints: this.waypts,
          
          optimizeWaypoints: true,
           travelMode: this.travelMode
