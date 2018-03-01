@@ -183,12 +183,12 @@
         waypts = [];
         for(var i = 0; i <=x; i++){
             waypts.push({
-              location: document.getElementById('mytext[]').value,
+              location: document.getElementById('mytext[]'),
               stopover: true
             });
         }
         var originInput = document.getElementById('origin-input');
-        var waypointInput = document.getElementById('mytext[]').value;
+        var waypointInput = document.getElementById('mytext[]');
         if(x == 2){
             waypointInput2 = document.getElementById('mytext[]').getElementsByTagName('input')[1];
             waypointAutocomplete2 = new google.maps.places.Autocomplete(
@@ -388,7 +388,7 @@
        
         for(var i = 0; i <=x; i++){
             waypts.push({
-              location: document.getElementById('mytext[]').value,
+              location: document.getElementById('mytext[]'),
               stopover: true
             });
         }
