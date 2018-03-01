@@ -328,16 +328,23 @@ function closeNav() {
        
        
        var waypts = []
-        
-            waypts.push({
+        if(document.getElementById('waypoint-input').value ==''){
+        }
+        else{
+        waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
-            });
-            waypts.push({
+              });
+        }
+        if(document.getElementById('waypoint-input2').value ==''){
+        }
+        else{
+        waypts.push({
               location: document.getElementById('waypoint-input2').value,
               stopover: true
-            });
-        
+              });
+        }
+         
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
