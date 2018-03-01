@@ -181,14 +181,14 @@
         waypts = [];
         for(var i = 0; i <=x; i++){
             waypts.push({
-              location: document.getElementById('mytext[]')[i],
+              location: document.getElementById('mytext[]').getElementsByTagName('input')[i],
               stopover: true
             });
         }
         var originInput = document.getElementById('origin-input');
-        var waypointInput = document.getElementById('mytext[]')[0];
+        var waypointInput = document.getElementById('mytext[]').getElementsByTagName('input')[0];
         if(x == 2){
-            waypointInput2 = document.getElementById('mytext[]')[1];
+            waypointInput2 = document.getElementById('mytext[]').getElementsByTagName('input')[1];
             waypointAutocomplete2 = new google.maps.places.Autocomplete(
             waypointInput2 ,{placeIdOnly: true});
             this.setupPlaceChangedListener(waypointAutocomplete2, 'WAY2');
