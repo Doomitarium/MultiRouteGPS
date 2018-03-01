@@ -389,7 +389,7 @@ function closeNav() {
           destination: {'placeId': this.destinationPlaceId},
          waypoints: waypts,
          
-         optimizeWaypoints: true,
+         optimizeWaypoints: this.optimizeWaypoints,
           travelMode: this.travelMode
         }, function(response, status) {
           if (status === 'OK') {
