@@ -121,8 +121,6 @@ body {
         placeholder="Add a waypoint">
   <input id="waypoint-input22" class="controls" type="text"
         placeholder="Add a waypoint">
-  <input id="waypoint-input23" class="controls" type="text"
-        placeholder="Add a waypoint">
 </div>
  
 <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Locations</span>
@@ -315,7 +313,6 @@ function closeNav() {
      this.waypointPlaceId20 = null;
      this.waypointPlaceId21 = null;
      this.waypointPlaceId22 = null;
-     this.waypointPlaceId23 = null;
         this.destinationPlaceId = null;
         this.optimizeWaypoints= true;
         this.travelMode = 'WALKING';
@@ -407,10 +404,6 @@ function closeNav() {
         waypointAutocomplete22 = new google.maps.places.Autocomplete(
             waypointInput22 ,{placeIdOnly: true});
             this.setupPlaceChangedListener(waypointAutocomplete22, 'WAY22');
-     var waypointInput23 = document.getElementById('waypoint-input23');
-        waypointAutocomplete23 = new google.maps.places.Autocomplete(
-            waypointInput23 ,{placeIdOnly: true});
-            this.setupPlaceChangedListener(waypointAutocomplete23, 'WAY23');
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
         this.directionsDisplay.setMap(map);
@@ -654,14 +647,6 @@ function closeNav() {
         else{
         waypts.push({
               location: document.getElementById('waypoint-input22').value,
-              stopover: true
-              });
-        }
-        if(document.getElementById('waypoint-input23').value ==''){
-        }
-        else{
-        waypts.push({
-              location: document.getElementById('waypoint-input23').value,
               stopover: true
               });
         }
