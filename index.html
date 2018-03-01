@@ -200,7 +200,6 @@
             waypointAutocomplete2 = new google.maps.places.Autocomplete(
             waypointInput2 ,{placeIdOnly: true});
             this.setupPlaceChangedListener(waypointAutocomplete2, 'WAY2');
-            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(waypointInput2);
             this.waypointPlaceId2 = null;
        
             var waypointInput3 = document.getElementsByName('mytext[]')[2]
