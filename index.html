@@ -81,9 +81,10 @@
       }
     </style>
       <script>
+    x = 1;
     
    $(document).ready(function() {
-    var x = 1;
+ 
     var max_fields      = 22; //maximum input boxes allowed
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
@@ -194,7 +195,7 @@
         }
         var originInput = document.getElementById('origin-input');
         var waypointInput = document.getElementById('mytext[]');
-        if(x == 2){
+        if(x === 2){
             waypointInput2 = document.getElementById('mytext[]').getElementsByTagName('input')[1];
             waypointAutocomplete2 = new google.maps.places.Autocomplete(
             waypointInput2 ,{placeIdOnly: true});
