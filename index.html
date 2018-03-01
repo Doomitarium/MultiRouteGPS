@@ -252,7 +252,7 @@ function closeNav() {
    function AutocompleteDirectionsHandler(map) {
         this.map = map;
         this.originPlaceId = null;
-        this.waypointPlaceId = [];
+        this.waypointPlaceId = null;
         this.destinationPlaceId = null;
         this.optimizeWaypoints= true;
         this.travelMode = 'WALKING';
@@ -326,10 +326,13 @@ function closeNav() {
        
        
        var waypts = []
-        for(var i = 0; i < {'placeId': this.waypointPlaceID.length}; i++)
-        {
+        
             waypts.push({
-              location: {'placeId': this.waypointPlaceID[i]},
+              location: document.getElementById('waypoint-input');
+              stopover: true
+            });
+            waypts.push({
+              location: document.getElementById('waypoint-input2');
               stopover: true
             });
         }
