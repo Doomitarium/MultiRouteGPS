@@ -458,7 +458,7 @@ function closeNav() {
         });
       };
       AutocompleteDirectionsHandler.prototype.route = function() {
-        if (!this.originPlaceId || !this.destinationPlaceId) {
+        if (!this.originPlaceId || !this.destinationPlaceId || !this.waypointPlaceId) {
           return;
         }
         var me = this;
