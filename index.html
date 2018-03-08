@@ -319,7 +319,9 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           
-
+       var onChangeHandler = function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+     };
       
         new AutocompleteDirectionsHandler(map);
         //document.getElementById('submit').addEventListener('click', function() {
