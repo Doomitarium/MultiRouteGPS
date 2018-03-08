@@ -4,7 +4,7 @@
    <style>
 body {
     font-family: "Lato", sans-serif;
-    background-color: #111;
+    background-color: #D8C787;
 }
  #floating-panel {
   position: absolute;
@@ -324,6 +324,7 @@ function closeNav() {
      };
       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
+        document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         //document.getElementById('submit').addEventListener('click', function() {
         //  calculateAndDisplayRoute(directionsService, directionsDisplay);
