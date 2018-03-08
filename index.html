@@ -256,14 +256,15 @@ function closeNav() {
       var directionsDisplay = new google.maps.DirectionsRenderer();
        var chicago = new google.maps.LatLng(41.850033, -87.6500523);
        var mapOptions = {
-    zoom:7,
-    center: chicago
-  }
+        zoom:7,
+        center: chicago,
+        mapTypeControl: false,
+        mapTypeId: 'roadmap'
+        }
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('directionsPanel'));
-          mapTypeControl: false,
-          mapTypeId: 'roadmap'
+          
         });
       
         new AutocompleteDirectionsHandler(map);
