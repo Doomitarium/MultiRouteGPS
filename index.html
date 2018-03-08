@@ -731,16 +731,20 @@ function closeNav() {
         });
       };
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        var start = document.getElementById('origin-input').value;
-        var end = document.getElementById('destination-input').value;
-        directionsService.route({
-          origin: start,
-          destination: end,
-          waypoints: waypts,
-          optimizeWaypoints: true,
-          travelMode: 'DRIVING'
-        });
-        }
+  var start = document.getElementById('origin-input').value;
+  var end = document.getElementById('destination-input').value;
+  directionsService.route({
+    origin: start,
+    destination: end,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
