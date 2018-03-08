@@ -738,6 +738,9 @@ function closeNav() {
   directionsService.route({
     origin: start,
     destination: end,
+    waypoints: waypts,
+         
+    optimizeWaypoints: true,
     travelMode: 'DRIVING'
   }, function(response, status) {
     if (status === 'OK') {
