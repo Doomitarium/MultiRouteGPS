@@ -252,15 +252,16 @@ function closeNav() {
 </script>
 <script>
       function initAutocomplete() { 
-     
+      var directionsDisplay = new google.maps.DirectionsRenderer();
         var map = new google.maps.Map(document.getElementById('map'), {
+          directionsDisplay.setMap(map);
+          directionsDisplay.setPanel(document.getElementById('directionsPanel'));
           mapTypeControl: false,
           center: {lat: 41.8688, lng: -81},
           zoom: 13,
           mapTypeId: 'roadmap'
         });
-       var directionsDisplay.setMap(map);
-       directionsDisplay.setPanel(document.getElementById('directionsPanel'));
+       
         new AutocompleteDirectionsHandler(map);
         //document.getElementById('submit').addEventListener('click', function() {
         //  calculateAndDisplayRoute(directionsService, directionsDisplay);
