@@ -6,8 +6,7 @@ body {
     font-family: "Lato", sans-serif;
     background-color: #111;
 }
-    <div id="map" style="float:left;width:70%; height:100%"></div>
-<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
+ 
 .sidenav {
     height: 100%;
     width: 0;
@@ -126,7 +125,8 @@ body {
 </div>
  
 <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Locations</span>
-
+   <div id="map" style="float:left;width:70%; height:100%"></div>
+<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
 
   <input id="origin-input" class="controls" type="text"
         placeholder="Enter an origin location">
@@ -259,7 +259,6 @@ function closeNav() {
           zoom: 13,
           mapTypeId: 'roadmap'
         });
-       var map = new google.maps.Map(document.getElementById('map'), mapOptions);
        directionsDisplay.setMap(map);
        directionsDisplay.setPanel(document.getElementById('directionsPanel'));
         new AutocompleteDirectionsHandler(map);
