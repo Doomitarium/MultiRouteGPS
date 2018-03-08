@@ -664,7 +664,14 @@ function closeNav() {
          
          optimizeWaypoints: this.optimizeWaypoints,
           travelMode: this.travelMode
-        }),
+        }, function(response, status) {
+          if (status === 'OK') {
+            me.directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      };
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var start = document.getElementById('origin-input').value;
         var end = document.getElementById('destination-input').value;
@@ -674,14 +681,7 @@ function closeNav() {
           waypoints: waypts,
           optimizeWaypoints: true,
           travelMode: 'DRIVING'
-        }), function(response, status) {
-          if (status === 'OK') {
-            me.directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        };
-             
+        });
      
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
