@@ -664,6 +664,16 @@ function closeNav() {
          
          optimizeWaypoints: this.optimizeWaypoints,
           travelMode: this.travelMode
+        },
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var start = document.getElementById('origin-input').value;
+        var end = document.getElementById('destination-input').value;
+        directionsService.route({
+          origin: start,
+          destination: end,
+          waypoints: waypts,
+          optimizeWaypoints: true,
+          travelMode: 'DRIVING'
         }, function(response, status) {
           if (status === 'OK') {
             me.directionsDisplay.setDirections(response);
