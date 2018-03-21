@@ -1,4 +1,4 @@
-(function() {
+function bsp () {
 
   var tsp; // singleton
   var gebMap;           // The map DOM object
@@ -1167,4 +1167,4 @@
 
   window.BpTspSolver = BpTspSolver;
     
- })();
+ }
