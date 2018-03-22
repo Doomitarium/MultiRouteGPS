@@ -763,8 +763,11 @@ function closeNav() {
           }
         });
       };
-  waypts.pop();
-        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  
+  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+   if (!this.originPlaceId || !this.destinationPlaceId) {
+          return;
+   }
   var start = document.getElementById('origin-input').value;
   var end = document.getElementById('destination-input').value;
   directionsService.route({
@@ -781,7 +784,9 @@ function closeNav() {
       window.alert('Directions request failed due to ' + status);
     }
   });
-}    waypts.pop();
+}    while(waypts.length() > 0){
+ waypts.pop();
+}
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
