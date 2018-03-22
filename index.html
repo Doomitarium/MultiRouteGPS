@@ -744,6 +744,7 @@ function closeNav() {
               stopover: true
               });
         }
+        new calculateAndDisplayRoute(directionsService, directionsDisplay);
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
