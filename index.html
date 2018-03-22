@@ -1,4 +1,4 @@
- <html>
+<html>
   <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <style>
@@ -24,15 +24,12 @@ body {
   line-height: 30px;
   padding-left: 10px;
 }
-
 #right-panel select, #right-panel input {
   font-size: 15px;
 }
-
 #right-panel select {
   width: 100%;
 }
-
 #right-panel i {
   font-size: 12px;
 }
@@ -311,7 +308,7 @@ function closeNav() {
     <script src="bspsolver.js"></script>
       var solverSelector = document.getElementById('solver-selector');
       this.setupClickListener('changemode-google', initAutocomplete);
-      this.setupClickListener('changemode-bsp', onSolveCallback(tsp));
+      this.setupClickListener('changemode-bsp', bsp);
 
    </script>
 <script>
@@ -330,10 +327,11 @@ function closeNav() {
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           
        var onChangeHandler = function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
      };
       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
+        document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input3').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input4').addEventListener('change', onChangeHandler);
@@ -357,7 +355,8 @@ function closeNav() {
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         //document.getElementById('submit').addEventListener('click', function() {
-        
+        //  calculateAndDisplayRoute(directionsService, directionsDisplay);
+       
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
        var infoWindow = new google.maps.InfoWindow;
@@ -383,7 +382,7 @@ function closeNav() {
        
       
       }
-    
+     
    function AutocompleteDirectionsHandler(map) {
         this.map = map;
         this.originPlaceId = null;
@@ -553,10 +552,6 @@ function closeNav() {
         });
       };
         var waypts = [];
-        function wayptCleanup(){
-         while(waypts.length > 0){
-         waypts.pop();
-}   
       AutocompleteDirectionsHandler.prototype.route = function() {
         if (!this.originPlaceId || !this.destinationPlaceId) {
           return;
@@ -565,7 +560,6 @@ function closeNav() {
        
        
        
-
         if(document.getElementById('waypoint-input').value ==''){
         }
         else{
@@ -753,7 +747,7 @@ function closeNav() {
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-          waypoints: waypts,
+         waypoints: waypts,
          
          optimizeWaypoints: this.optimizeWaypoints,
           travelMode: this.travelMode
@@ -764,11 +758,8 @@ function closeNav() {
             window.alert('Directions request failed due to ' + status);
           }
         });
-       calculateAndDisplayRoute(directionsService, directionsDisplay);
-       wayptCleanup();
       };
- 
-  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var start = document.getElementById('origin-input').value;
   var end = document.getElementById('destination-input').value;
   directionsService.route({
@@ -785,10 +776,7 @@ function closeNav() {
       window.alert('Directions request failed due to ' + status);
     }
   });
-   wayptCleanup();
 }
- 
- }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
