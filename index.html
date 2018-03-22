@@ -330,7 +330,6 @@ function closeNav() {
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           
        var onChangeHandler = function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
      };
       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
@@ -358,7 +357,7 @@ function closeNav() {
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         //document.getElementById('submit').addEventListener('click', function() {
-        //  calculateAndDisplayRoute(directionsService, directionsDisplay);
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
        
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
@@ -751,7 +750,7 @@ function closeNav() {
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
-         waypoints: waypts,
+          waypoints: waypts,
          
          optimizeWaypoints: this.optimizeWaypoints,
           travelMode: this.travelMode
@@ -763,7 +762,9 @@ function closeNav() {
           }
         });
       };
-  
+  while(waypts.length() > 0){
+  waypts.pop();
+  }
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
    if (!this.originPlaceId || !this.destinationPlaceId) {
           return;
@@ -784,8 +785,9 @@ function closeNav() {
       window.alert('Directions request failed due to ' + status);
     }
   });
-}    while(waypts.length() > 0){
+   while(waypts.length() > 0){
  waypts.pop();
+}   
 }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
