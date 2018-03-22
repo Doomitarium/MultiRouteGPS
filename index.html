@@ -326,9 +326,7 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           
-       var onChangeHandler = function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-     };
+      
       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
         document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
@@ -355,7 +353,9 @@ function closeNav() {
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         //document.getElementById('submit').addEventListener('click', function() {
-        //  calculateAndDisplayRoute(directionsService, directionsDisplay);
+       var onChangeHandler = function() {
+             calculateAndDisplayRoute(directionsService, directionsDisplay);
+       };
        
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
@@ -776,9 +776,6 @@ function closeNav() {
       window.alert('Directions request failed due to ' + status);
     }
   });
-      while(waypts.length > 0){
-      waypts.pop()
-    }
 }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
