@@ -325,11 +325,13 @@ function closeNav() {
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
-          
+          var onChangeHandler = function() {
+             calculateAndDisplayRoute(directionsService, directionsDisplay);
+       };
       
-      document.getElementById('origin-input').addEventListener('change', onChangeHandler);
-      document.getElementById('destination-input').addEventListener('change', onChangeHandler);
-        document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
+       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
+       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input3').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input4').addEventListener('change', onChangeHandler);
@@ -352,11 +354,9 @@ function closeNav() {
        document.getElementById('waypoint-input21').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
-        //document.getElementById('submit').addEventListener('click', function() {
-       var onChangeHandler = function() {
-             calculateAndDisplayRoute(directionsService, directionsDisplay);
-       };
-       
+        document.getElementById('submit').addEventListener('click', function() {
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+      }
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
        var infoWindow = new google.maps.InfoWindow;
