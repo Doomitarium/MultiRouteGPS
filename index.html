@@ -775,10 +775,10 @@ function closeNav() {
     } else {
       window.alert('Directions request failed due to ' + status);
     }
-    while(waypts.length > 0){
+  });
+      while(waypts.length > 0){
       waypts.pop()
     }
-  });
 }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
