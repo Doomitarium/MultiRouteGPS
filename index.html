@@ -358,7 +358,7 @@ function closeNav() {
         new AutocompleteDirectionsHandler(map);
         //document.getElementById('submit').addEventListener('click', function() {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
-       
+        wayptCleanup();
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
        var infoWindow = new google.maps.InfoWindow;
@@ -778,11 +778,13 @@ function closeNav() {
     } else {
       window.alert('Directions request failed due to ' + status);
     }
-     while(waypts.length() > 0){
- waypts.pop();
-}   
   });
 }
+ function wayptCleanup{
+  while(waypts.length() > 0){
+ waypts.pop();
+}   
+ }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
