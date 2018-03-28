@@ -416,7 +416,10 @@ function closeNav() {
         var waypointInput = document.getElementById('waypoint-input');
         var modeSelector = document.getElementById('mode-selector');
         var waypointInput2 = document.getElementById('waypoint-input2');
-     if((document.getElementById('waypoint-input').value) !=''&&(document.getElementById('destination-input').value =='')){
+      if((document.getElementById('waypoint-input').value) !=''){
+         destinationInput = document.getElementById('waypoint-input');
+     }
+     if((document.getElementById('waypoint-input').value) !=''&&(document.getElementById('waypoint-input2').value =!='')){
          destinationInput = document.getElementById('waypoint-input2');
      }
      if((document.getElementById('waypoint-input2').value) !=''&&(document.getElementById('destination-input').value =='')){
