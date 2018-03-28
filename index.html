@@ -880,7 +880,7 @@ function closeNav() {
                 
   var start = document.getElementById('origin-input').value;
   
-          if(document.getElementById('waypoint-input').value !='' && document.getElementById('waypoint-input2').value ==''){
+          if(document.getElementById('waypoint-input').value !='' && document.getElementById('waypoint-input2').value !=''){
   var end = document.getElementById('waypoint-input').value;
           directionsService.route({
     origin: start,
