@@ -418,6 +418,13 @@ function closeNav() {
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
         var waypointInput2 = document.getElementById('waypoint-input2');
+     if(document.getElementById('destination-input').value ==''){
+          destinationInput = document.getElementById('waypoint-input');
+        }
+     else if((document.getElementById('waypoint-input').value) !=''&&(document.getElementById('destination-input').value =='')){
+        destinationInput = document.getElementById('waypoint-input2');
+     }
+        
         waypointAutocomplete2 = new google.maps.places.Autocomplete(
             waypointInput2 ,{placeIdOnly: true});
             this.setupPlaceChangedListener(waypointAutocomplete2, 'WAY2');
@@ -561,9 +568,6 @@ function closeNav() {
         var me = this;
        
        
-       if(document.getElementById('destination-input').value ==''){
-          destinationInput = document.getElementById('waypoint-input');
-        }
         if(document.getElementById('waypoint-input').value ==''){
         }
         else{
