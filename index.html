@@ -897,7 +897,7 @@ function closeNav() {
     }
   });
   }
-       if(document.getElementById('waypoint-input2').value !=''){
+       else if(document.getElementById('waypoint-input2').value !='' && document.getElementById('waypoint-input3').value ==''){
   end = document.getElementById('waypoint-input2').value
           directionsService.route({
     origin: start,
