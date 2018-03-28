@@ -568,21 +568,19 @@ function closeNav() {
           return;
         }
         var me = this;
-       if(document.getElementById('destination-input').value ==''&& document.getElementById('waypoint-input2').value ==''){
         
        
         if(document.getElementById('waypoint-input2').value ==''){
-          waypts.pop();
+            var y = document.getElementById("waypoint-input2");
+              y.type= "text";
         }
         else{
-          var y = document.getElementById("waypoint-input2");
-              y.type= "text";
+        
         waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
               });
         }
-       }
         if(document.getElementById('waypoint-input2').value ==''){
         }
         else{
