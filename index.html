@@ -326,12 +326,6 @@ function closeNav() {
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
-          var onChangeHandler = function() {
-             calculateAndDisplayRoute(directionsService, directionsDisplay);
-       };
-      
-      
-      })
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
        var infoWindow = new google.maps.InfoWindow;
