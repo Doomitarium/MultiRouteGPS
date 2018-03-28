@@ -878,7 +878,7 @@ function closeNav() {
       };
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var start = document.getElementById('origin-input').value;
-  var end = document.getElementById('waypoint-input').value;
+  var end = destinationInput.value;
   directionsService.route({
     origin: start,
     destination: end,
