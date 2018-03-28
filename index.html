@@ -424,6 +424,8 @@ function closeNav() {
         var destinationInput = document.getElementById('waypoint-input2');
      }else if ((document.getElementById('waypoint-input2').value) !=''&&(document.getElementById('destination-input').value =='')){
       var destinationInput = document.getElementById('waypoint-input3');
+     }else (document.getElementById('destination-input').value !=''){
+       var destinationInput = document.getElementById('destination-input');
      }
        
         
@@ -797,7 +799,6 @@ function closeNav() {
               stopover: true
               });
         }
-        new calculateAndDisplayRoute(directionsService, directionsDisplay);
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
