@@ -566,11 +566,9 @@ function closeNav() {
             var y = document.getElementById("waypoint-input2");
               y.type= "text";
         }
-        else if(document.getElementById('waypoint-input3').value ==''&&document.getElementById('waypoint-input2').value !=''){
+        if(document.getElementById('waypoint-input3').value ==''&&document.getElementById('waypoint-input2').value !=''){
           var y = document.getElementById("waypoint-input3");
               y.type= "text";
-        }
-        else{
           waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
