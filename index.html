@@ -415,16 +415,15 @@ function closeNav() {
         this.travelMode = 'WALKING';
         var originInput = document.getElementById('origin-input');
         var waypointInput = document.getElementById('waypoint-input');
-        var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
         var waypointInput2 = document.getElementById('waypoint-input2');
      if(document.getElementById('destination-input').value ==''){
-          destinationInput = document.getElementById('waypoint-input');
+         var destinationInput = document.getElementById('waypoint-input');
         }
      else if((document.getElementById('waypoint-input').value) !=''&&(document.getElementById('destination-input').value =='')){
-        destinationInput = document.getElementById('waypoint-input2');
+        var destinationInput = document.getElementById('waypoint-input2');
      }else{
-       destinationInput = document.getElementById('destination-input');
+      var destinationInput = document.getElementById('destination-input');
      }
        
         
@@ -569,7 +568,8 @@ function closeNav() {
           return;
         }
         var me = this;
-       
+       if(document.getElementById('destination-input').value ==''&& document.getElementById('waypoint-input2').value !=''){
+        
        
         if(document.getElementById('waypoint-input').value ==''){
         }
@@ -581,6 +581,7 @@ function closeNav() {
               stopover: true
               });
         }
+       }
         if(document.getElementById('waypoint-input2').value ==''){
         }
         else{
