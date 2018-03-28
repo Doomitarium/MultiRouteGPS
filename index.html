@@ -878,7 +878,71 @@ function closeNav() {
       };
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var start = document.getElementById('origin-input').value;
-  var end = destinationInput.value;
+       if(document.getElementById('waypoint-input2').value ==''){
+  var end = document.getElementById('waypoint-input').value
+  }
+       if(document.getElementById('waypoint-input3').value ==''){
+  var end = document.getElementById('waypoint-input2').value
+  }
+           if(document.getElementById('waypoint-input4').value ==''){
+  var end = document.getElementById('waypoint-input3').value
+  }
+           if(document.getElementById('waypoint-input6').value ==''){
+  var end = document.getElementById('waypoint-input5').value
+  }
+           if(document.getElementById('waypoint-input7').value ==''){
+  var end = document.getElementById('waypoint-input6').value
+  }
+           if(document.getElementById('waypoint-input8').value ==''){
+  var end = document.getElementById('waypoint-input7').value
+  }
+           if(document.getElementById('waypoint-input9').value ==''){
+  var end = document.getElementById('waypoint-input8').value
+  }
+           if(document.getElementById('waypoint-input10').value ==''){
+  var end = document.getElementById('waypoint-input9').value
+  }
+           if(document.getElementById('waypoint-input11').value ==''){
+  var end = document.getElementById('waypoint-input10').value
+  }
+           if(document.getElementById('waypoint-input12').value ==''){
+  var end = document.getElementById('waypoint-input11').value
+  }
+           if(document.getElementById('waypoint-input13').value ==''){
+  var end = document.getElementById('waypoint-input12').value
+  }
+           if(document.getElementById('waypoint-input14').value ==''){
+  var end = document.getElementById('waypoint-input13').value
+  }
+           if(document.getElementById('waypoint-input15').value ==''){
+  var end = document.getElementById('waypoint-input14').value
+  }
+           if(document.getElementById('waypoint-input16').value ==''){
+  var end = document.getElementById('waypoint-input15').value
+  }
+           if(document.getElementById('waypoint-input17').value ==''){
+  var end = document.getElementById('waypoint-input16').value
+  }
+           if(document.getElementById('waypoint-input18').value ==''){
+  var end = document.getElementById('waypoint-input17').value
+  }
+           if(document.getElementById('waypoint-input19').value ==''){
+  var end = document.getElementById('waypoint-input18').value
+  }
+           if(document.getElementById('waypoint-input20').value ==''){
+  var end = document.getElementById('waypoint-input19').value
+  }
+           if(document.getElementById('waypoint-input21').value ==''){
+  var end = document.getElementById('waypoint-input20').value
+  }
+           if(document.getElementById('waypoint-input22').value ==''){
+  var end = document.getElementById('waypoint-input21').value
+  }
+           
+           if(document.getElementById('destination-input').value !=''){
+  var end = document.getElementById('destination-input').value
+  }
+          
   directionsService.route({
     origin: start,
     destination: end,
