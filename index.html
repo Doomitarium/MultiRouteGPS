@@ -561,7 +561,9 @@ function closeNav() {
         var me = this;
        
        
-       
+       if(document.getElementById('destination-input').value ==''){
+          destinationInput = document.getElementById('waypoint-input');
+        }
         if(document.getElementById('waypoint-input').value ==''){
         }
         else{
