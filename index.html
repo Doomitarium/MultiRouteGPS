@@ -568,10 +568,11 @@ function closeNav() {
           return;
         }
         var me = this;
-       if(document.getElementById('destination-input').value ==''&& document.getElementById('waypoint-input2').value !=''){
+       if(document.getElementById('destination-input').value ==''&& document.getElementById('waypoint-input2').value ==''){
         
        
-        if(document.getElementById('waypoint-input').value ==''){
+        if(document.getElementById('waypoint-input2').value ==''){
+          waypts.pop();
         }
         else{
           var y = document.getElementById("waypoint-input2");
