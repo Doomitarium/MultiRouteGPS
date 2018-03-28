@@ -104,7 +104,6 @@ body {
       }
     
      #origin-input,
-     #destination-input,
      #waypoint-input
      {
         background-color: #fff;
@@ -175,6 +174,8 @@ body {
   <input id="waypoint-input21" class="controls" type="hidden"
         placeholder="Add a waypoint">
   <input id="waypoint-input22" class="controls" type="hidden"
+        placeholder="Add a waypoint">
+  <input id="destination-input" class="controls" type="hidden"
         placeholder="Add a waypoint">
 </div>
  
@@ -417,15 +418,70 @@ function closeNav() {
         var waypointInput = document.getElementById('waypoint-input');
         var modeSelector = document.getElementById('mode-selector');
         var waypointInput2 = document.getElementById('waypoint-input2');
-     if(document.getElementById('destination-input').value ==''){
-         var destinationInput = document.getElementById('waypoint-input');
-        }
-     else if((document.getElementById('waypoint-input').value) !=''&&(document.getElementById('destination-input').value =='')){
-        var destinationInput = document.getElementById('waypoint-input2');
-     }else if ((document.getElementById('waypoint-input2').value) !=''&&(document.getElementById('destination-input').value =='')){
-      var destinationInput = document.getElementById('waypoint-input3');
-     }else{
-       var destinationInput = document.getElementById('destination-input');
+        var destinationInput = document.getElementById('destination-input');
+     if((document.getElementById('waypoint-input').value) !=''&&(document.getElementById('destination-input').value =='')){
+         destinationInput = document.getElementById('waypoint-input2');
+     if((document.getElementById('waypoint-input2').value) !=''&&(document.getElementById('destination-input').value =='')){
+         destinationInput = document.getElementById('waypoint-input3');
+     }
+       if ((document.getElementById('waypoint-input3').value) !=''&&(document.getElementById('destination-input').value =='')){
+       destinationInput = document.getElementById('waypoint-input4');
+       if ((document.getElementById('waypoint-input4').value) !=''&&(document.getElementById('destination-input').value =='')){
+       destinationInput = document.getElementById('waypoint-input5');
+         if ((document.getElementById('waypoint-input5').value) !=''&&(document.getElementById('destination-input').value =='')){
+       destinationInput = document.getElementById('waypoint-input6');
+         }
+           if ((document.getElementById('waypoint-input7').value) !=''&&(document.getElementById('destination-input').value =='')){
+       destinationInput = document.getElementById('waypoint-input8');
+           }
+             
+             if ((document.getElementById('waypoint-input8').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input9');
+             }   
+                if ((document.getElementById('waypoint-input9').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input10');
+               }
+                if ((document.getElementById('waypoint-input10').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input11');
+                 }
+                   if ((document.getElementById('waypoint-input11').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input12');
+                   }
+                    if ((document.getElementById('waypoint-input12').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input13');
+                     }
+                       if ((document.getElementById('waypoint-input13').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input14');
+                       }
+                         if ((document.getElementById('waypoint-input14').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input15');
+                         }
+                            if ((document.getElementById('waypoint-input15').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input16');
+                           }
+                             if ((document.getElementById('waypoint-input16').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input17');
+                             }
+                               if ((document.getElementById('waypoint-input17').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input18');
+                               }
+                                if ((document.getElementById('waypoint-input18').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input19');
+                                 }
+                                   
+                                  if ((document.getElementById('waypoint-input19').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input20');
+                                   }
+        if ((document.getElementById('waypoint-input20').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input21');
+                                   }
+         if ((document.getElementById('waypoint-input21').value) !=''&&(document.getElementById('destination-input').value =='')){
+      destinationInput = document.getElementById('waypoint-input22');
+                                   }
+         
+     }
+         if (document.getElementById('destination-input').value !=''){
+       destinationInput = document.getElementById('destination-input');
      }
        
         
@@ -799,6 +855,10 @@ function closeNav() {
               stopover: true
               });
         }
+        if(document.getElementById('waypoint-input22').value !=''){
+           var y = document.getElementById("destination-input");
+              y.type= "text";
+        }
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
@@ -816,7 +876,7 @@ function closeNav() {
       };
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var start = document.getElementById('origin-input').value;
-  var end = document.getElementById('destination-input').value;
+  var end = destinationInput;
   directionsService.route({
     origin: start,
     destination: end,
