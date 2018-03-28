@@ -423,7 +423,10 @@ function closeNav() {
         }
      else if((document.getElementById('waypoint-input').value) !=''&&(document.getElementById('destination-input').value =='')){
         destinationInput = document.getElementById('waypoint-input2');
+     }else{
+       destinationInput = document.getElementById('destination-input');
      }
+       
         
         waypointAutocomplete2 = new google.maps.places.Autocomplete(
             waypointInput2 ,{placeIdOnly: true});
