@@ -789,7 +789,7 @@ function closeNav() {
        
          function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var start = document.getElementById('origin-input').value;
-  var end = destinationInput;
+  var end = document.getElementById('waypoint-input2').value;
   directionsService.route({
     origin: start,
     destination: end,
