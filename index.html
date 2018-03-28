@@ -898,68 +898,8 @@ function closeNav() {
   });
   }
        if(document.getElementById('waypoint-input2').value !=''){
-  end = document.getElementById('waypoint-input2').value
-  }
-           if(document.getElementById('waypoint-input4').value ==''){
-  end = document.getElementById('waypoint-input3').value
-  }
-           if(document.getElementById('waypoint-input6').value ==''){
-  end = document.getElementById('waypoint-input5').value
-  }
-           if(document.getElementById('waypoint-input7').value ==''){
-  end = document.getElementById('waypoint-input6').value
-  }
-           if(document.getElementById('waypoint-input8').value ==''){
-   end = document.getElementById('waypoint-input7').value
-  }
-           if(document.getElementById('waypoint-input9').value ==''){
-   end = document.getElementById('waypoint-input8').value
-  }
-           if(document.getElementById('waypoint-input10').value ==''){
-   end = document.getElementById('waypoint-input9').value
-  }
-           if(document.getElementById('waypoint-input11').value ==''){
-   end = document.getElementById('waypoint-input10').value
-  }
-           if(document.getElementById('waypoint-input12').value ==''){
-   end = document.getElementById('waypoint-input11').value
-  }
-           if(document.getElementById('waypoint-input13').value ==''){
-   end = document.getElementById('waypoint-input12').value
-  }
-           if(document.getElementById('waypoint-input14').value ==''){
-   end = document.getElementById('waypoint-input13').value
-  }
-           if(document.getElementById('waypoint-input15').value ==''){
-   end = document.getElementById('waypoint-input14').value
-  }
-           if(document.getElementById('waypoint-input16').value ==''){
-   end = document.getElementById('waypoint-input15').value
-  }
-           if(document.getElementById('waypoint-input17').value ==''){
-   end = document.getElementById('waypoint-input16').value
-  }
-           if(document.getElementById('waypoint-input18').value ==''){
-   end = document.getElementById('waypoint-input17').value
-  }
-           if(document.getElementById('waypoint-input19').value ==''){
-   end = document.getElementById('waypoint-input18').value
-  }
-           if(document.getElementById('waypoint-input20').value ==''){
-   end = document.getElementById('waypoint-input19').value
-  }
-           if(document.getElementById('waypoint-input21').value ==''){
-   end = document.getElementById('waypoint-input20').value
-  }
-           if(document.getElementById('waypoint-input22').value ==''){
-   end = document.getElementById('waypoint-input21').value
-  }
-           
-           if(document.getElementById('destination-input').value !=''){
-   end = document.getElementById('destination-input').value
-  }
-          
-  directionsService.route({
+  end = document.getElementById('waypoint-input2').value;
+          directionsService.route({
     origin: start,
     destination: end,
     waypoints: waypts,
@@ -973,6 +913,67 @@ function closeNav() {
       window.alert('Directions request failed due to ' + status);
     }
   });
+  }
+           if(document.getElementById('waypoint-input4').value ==''){
+  end = document.getElementById('waypoint-input3').value;
+  }
+           if(document.getElementById('waypoint-input6').value ==''){
+  end = document.getElementById('waypoint-input5').value;
+  }
+           if(document.getElementById('waypoint-input7').value ==''){
+  end = document.getElementById('waypoint-input6').value;
+  }
+           if(document.getElementById('waypoint-input8').value ==''){
+   end = document.getElementById('waypoint-input7').value;
+  }
+           if(document.getElementById('waypoint-input9').value ==''){
+   end = document.getElementById('waypoint-input8').value;
+  }
+           if(document.getElementById('waypoint-input10').value ==''){
+   end = document.getElementById('waypoint-input9').value;
+  }
+           if(document.getElementById('waypoint-input11').value ==''){
+   end = document.getElementById('waypoint-input10').value;
+  }
+           if(document.getElementById('waypoint-input12').value ==''){
+   end = document.getElementById('waypoint-input11').value;
+  }
+           if(document.getElementById('waypoint-input13').value ==''){
+   end = document.getElementById('waypoint-input12').value;
+  }
+           if(document.getElementById('waypoint-input14').value ==''){
+   end = document.getElementById('waypoint-input13').value;
+  }
+           if(document.getElementById('waypoint-input15').value ==''){
+   end = document.getElementById('waypoint-input14').value;
+  }
+           if(document.getElementById('waypoint-input16').value ==''){
+   end = document.getElementById('waypoint-input15').value;
+  }
+           if(document.getElementById('waypoint-input17').value ==''){
+   end = document.getElementById('waypoint-input16').value;
+  }
+           if(document.getElementById('waypoint-input18').value ==''){
+   end = document.getElementById('waypoint-input17').value;
+  }
+           if(document.getElementById('waypoint-input19').value ==''){
+   end = document.getElementById('waypoint-input18').value;
+  }
+           if(document.getElementById('waypoint-input20').value ==''){
+   end = document.getElementById('waypoint-input19').value;
+  }
+           if(document.getElementById('waypoint-input21').value ==''){
+   end = document.getElementById('waypoint-input20').value;
+  }
+           if(document.getElementById('waypoint-input22').value ==''){
+   end = document.getElementById('waypoint-input21').value;
+  }
+           
+           if(document.getElementById('destination-input').value !=''){
+   end = document.getElementById('destination-input').value;
+  }
+          
+ 
 }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
