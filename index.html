@@ -867,29 +867,18 @@ function closeNav() {
   
           if(document.getElementById('waypoint-input').value !='' && document.getElementById('waypoint-input2').value ==''){
   var end = document.getElementById('waypoint-input').value;
-          directionsService.route({
-    origin: start,
-    destination: end,
-    waypoints: waypts,
-         
-    optimizeWaypoints: true,
-    travelMode: 'DRIVING'
-  }, function(response, status) {
-    if (status === 'OK') {
-      directionsDisplay.setDirections(response);
-    } else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
+          
   }
         
-  if(document.getElementById('waypoint-input2').value !='' && document.getElementById('waypoint-input3').value ==''){
+  else if(document.getElementById('waypoint-input2').value !='' && document.getElementById('waypoint-input3').value ==''){
     waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
               });
   end = document.getElementById('waypoint-input2').value;
-          directionsService.route({
+         
+  }
+           directionsService.route({
     origin: start,
     destination: end,
     waypoints: waypts,
@@ -903,7 +892,6 @@ function closeNav() {
       window.alert('Directions request failed due to ' + status);
     }
   });
-  }
         }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
