@@ -134,9 +134,9 @@ body {
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-<input id="waypoint-input2" class="controls" type="text"
+<input id="waypoint-input2" class="controls" type="hidden"
         placeholder="Add a waypoint">
-<input id="waypoint-input3" class="controls" type="text"
+<input id="waypoint-input3" class="controls" type="hidden"
         placeholder="Add a waypoint">
  <input id="waypoint-input4" class="controls" type="text"
         placeholder="Add a waypoint">
@@ -565,6 +565,8 @@ function closeNav() {
         if(document.getElementById('waypoint-input').value ==''){
         }
         else{
+          var y = document.getElementById("waypoint-input2");
+              y.type= "text";
         waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
