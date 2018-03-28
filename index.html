@@ -327,13 +327,13 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           var onChangeHandler = function() {
-             calculateAndDisplayRoute(directionsService, directionsDisplay);
+             
        };
       
-       document.getElementById('origin-input').addEventListener('change');
-       document.getElementById('destination-input').addEventListener('change');
-       document.getElementById('waypoint-input').addEventListener('change');
-       document.getElementById('waypoint-input2').addEventListener('change');
+       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
+       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input3').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input4').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input5').addEventListener('change', onChangeHandler);
@@ -860,21 +860,7 @@ function closeNav() {
               y.type= "text";
         }
       
-        this.directionsService.route({
-          origin: {'placeId': this.originPlaceId},
-          destination: {'placeId': this.destinationPlaceId},
-         waypoints: waypts,
-         
-         optimizeWaypoints: this.optimizeWaypoints,
-          travelMode: this.travelMode
-        }, function(response, status) {
-          if (status === 'OK') {
-            me.directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
-      };
+       
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
                 
   var start = document.getElementById('origin-input').value;
