@@ -478,8 +478,6 @@ function closeNav() {
          if ((document.getElementById('waypoint-input21').value) !=''&&(document.getElementById('destination-input').value =='')){
       destinationInput = document.getElementById('waypoint-input22');
                                    }
-         
-     }
          if (document.getElementById('destination-input').value !=''){
        destinationInput = document.getElementById('destination-input');
      }
@@ -627,7 +625,7 @@ function closeNav() {
         }
         var me = this;
         
-       
+      
         if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
             var y = document.getElementById("waypoint-input2");
               y.type= "text";
@@ -859,6 +857,7 @@ function closeNav() {
            var y = document.getElementById("destination-input");
               y.type= "text";
         }
+      
         this.directionsService.route({
           origin: {'placeId': this.originPlaceId},
           destination: {'placeId': this.destinationPlaceId},
