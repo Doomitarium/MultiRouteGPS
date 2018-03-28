@@ -859,7 +859,7 @@ function closeNav() {
            var y = document.getElementById("destination-input");
               y.type= "text";
         }
-      
+      }
        
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
                 
@@ -882,6 +882,7 @@ function closeNav() {
     }
   });
   }
+        
   if(document.getElementById('waypoint-input2').value !='' && document.getElementById('waypoint-input3').value ==''){
     waypts.push({
               location: document.getElementById('waypoint-input').value,
@@ -903,6 +904,7 @@ function closeNav() {
     }
   });
   }
+        }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
