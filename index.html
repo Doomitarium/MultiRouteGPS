@@ -205,13 +205,8 @@ body {
       <input type="radio" name="solve" id="changemode-bsp">
       <label for="changemode-bsp">Our TSP</label>
     </div>
- <div id="Final-selector" class="controls">
-      <input type="radio" name="final" id="changemode-final" value="changemode-final" checked="checked">
-      <label for="changemode-final">Final Destination</label>
-
-      <input type="radio" name="final" id="changemode-round" value= "changemode-round">
-      <label for="changemode-round">Round Trip</label>
-    </div>
+ <input type="radio" name="radionbutton" value="1" id="button1"/>
+<input type="radio" name="radionbutton" value="2" id="button"/>
 <div id="right-panel"></div>
 <div id="map"></div>
 <script>
@@ -364,8 +359,8 @@ function closeNav() {
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         document.getElementById('submit').addEventListener('click', function() {
-        var FinalSelector = document.getElementById('Final-selector').value;
-         if (FinalSelector == 'changemode-final'){
+      var button1 = document.getElementById("button1");
+         if (button1.checked){
            calculateAndDisplayFinalRoute(directionsService, directionsDisplay);
          }
          else{ 
@@ -575,11 +570,21 @@ function closeNav() {
         }
         var me = this;
         var count = 1;
-      
+                 if(button1.checked){
         if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
             var y = document.getElementById("waypoint-input2");
               y.type= "text";
         }
+                 }
+    else{ 
+       if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
+            var y = document.getElementById("waypoint-input2");
+              y.type= "text";
+         waypts.push({
+              location: document.getElementById('waypoint-input').value,
+              stopover: true
+              });
+    }
         if(document.getElementById('waypoint-input3').value ==''&&document.getElementById('waypoint-input2').value !=''){
           var y = document.getElementById("waypoint-input3");
               y.type= "text";
@@ -777,6 +782,7 @@ function closeNav() {
        }
          function calculateAndDisplayFinalRoute(directionsService, directionsDisplay) {
   var start = document.getElementById('origin-input').value;
+
 if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
   var end = document.getElementById('waypoint-input').value;
   count = 2;
