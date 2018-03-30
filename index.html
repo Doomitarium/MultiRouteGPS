@@ -330,9 +330,9 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           var onChangeHandler = function() {
-            ++count;
+            --count;
             if(button1.checked){
-             if (count > 4){
+             if (count == 1){
                waypts.pop();
              }
             }
