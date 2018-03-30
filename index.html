@@ -364,11 +364,11 @@ function closeNav() {
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         document.getElementById('submit').addEventListener('click', function() {
-        var FinalSelector = document.getElementById('Final-selector');
-         if (FinalSelector.value == 'changemode-final'){
+        var FinalSelector = document.getElementById('Final-selector').value;
+         if (FinalSelector == 'changemode-final'){
            calculateAndDisplayFinalRoute(directionsService, directionsDisplay);
          }
-         if(FinalSelector.value == 'changemode-round'){ 
+         if(FinalSelector == 'changemode-round'){ 
            calculateAndDisplayRoundRoute(directionsService, directionsDisplay);
          }
       })
