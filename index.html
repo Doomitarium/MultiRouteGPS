@@ -365,10 +365,10 @@ function closeNav() {
         new AutocompleteDirectionsHandler(map);
         document.getElementById('submit').addEventListener('click', function() {
         var FinalSelector = document.getElementById('Final-selector');
-         if (FinalSelector.id == 'changemode-final'){
+         if (FinalSelector.value == 'changemode-final'){
            calculateAndDisplayFinalRoute(directionsService, directionsDisplay);
          }
-         if(FinalSelector.id == 'changemode-round'){ 
+         if(FinalSelector.value == 'changemode-round'){ 
            calculateAndDisplayRoundRoute(directionsService, directionsDisplay);
          }
       })
