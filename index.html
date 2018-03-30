@@ -330,11 +330,7 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           var onChangeHandler = function() {
-            --count;
-            if(button1.checked){
-             if (count == 1){
-               waypts.pop();
-             }
+           
             }
        };
       
@@ -575,15 +571,6 @@ function closeNav() {
         }
         var me = this;
         var count = 2;
-                 if(button1.checked){
-                   if(count == 1){
-        if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
-            var y = document.getElementById("waypoint-input2");
-              y.type= "text";
-        }
-                   }
-                 }
-    if (button1.checked == false){ 
        if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
             var y = document.getElementById("waypoint-input2");
               y.type= "text";
@@ -591,7 +578,6 @@ function closeNav() {
               location: document.getElementById('waypoint-input').value,
               stopover: true
               });
-       }
     }
         if(document.getElementById('waypoint-input3').value ==''&&document.getElementById('waypoint-input2').value !=''){
           var y = document.getElementById("waypoint-input3");
@@ -793,7 +779,7 @@ function closeNav() {
 count = 2;
 if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
   var end = document.getElementById('waypoint-input').value;
-  count = 2;
+  count = 1;
 }
 else if(document.getElementById('waypoint-input3').value ==''&& document.getElementById('waypoint-input2').value !=''){
   var end = document.getElementById('waypoint-input2').value;
@@ -866,7 +852,21 @@ else if(document.getElementById('waypoint-input3').value ==''&& document.getElem
            else if(document.getElementById('destination-input').value !=''){
   var end = document.getElementById('destination-input').value; count = 2;
 }
+           if(count == 1){
   directionsService.route({
+    origin: start,
+    destination: end,
+    
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+             else{
+             directionsService.route({
     origin: start,
     destination: end,
     waypoints: waypts,
@@ -880,6 +880,7 @@ else if(document.getElementById('waypoint-input3').value ==''&& document.getElem
       window.alert('Directions request failed due to ' + status);
     }
   });
+             }      }     
          }
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
