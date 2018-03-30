@@ -331,8 +331,9 @@ function closeNav() {
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           var onChangeHandler = function() {
            count++;
-            if (count > 4) {
+            if (count > 3) {
            waypts.pop()
+              count--;
            }
        };
       
