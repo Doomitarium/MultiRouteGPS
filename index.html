@@ -330,7 +330,7 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           var onChangeHandler = function() {
-            count - 1;
+            ++count;
             if(button1.checked){
              if (count > 2){
                waypts.pop();
@@ -582,7 +582,7 @@ function closeNav() {
               y.type= "text";
         }
                    }
-                   else if(count == 1){ 
+                   else if(count == 2){ 
                      waypts.pop();
                        }
                  }
