@@ -330,8 +330,10 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
           var onChangeHandler = function() {
-           
-
+           count++;
+            if (count > 4) {
+           waypts.pop()
+           }
        };
       
        document.getElementById('origin-input').addEventListener('change', onChangeHandler);
