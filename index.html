@@ -206,7 +206,9 @@ body {
       <label for="changemode-bsp">Our TSP</label>
     </div>
  <input type="radio" name="radionbutton" value="1" id="button1"/>
+  <label for="button1">Final Destination</label>
 <input type="radio" name="radionbutton" value="2" id="button"/>
+  <label for="button">Round Trip</label>
 <div id="right-panel"></div>
 <div id="map"></div>
 <script>
@@ -576,7 +578,7 @@ function closeNav() {
               y.type= "text";
         }
                  }
-    else{ 
+    else if (button.checked){ 
        if(document.getElementById('waypoint-input2').value ==''&& document.getElementById('waypoint-input').value !=''){
             var y = document.getElementById("waypoint-input2");
               y.type= "text";
