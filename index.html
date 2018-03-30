@@ -367,6 +367,7 @@ function closeNav() {
          }
          else{ 
            calculateAndDisplayRoundRoute(directionsService, directionsDisplay);
+          ++count;
          }
       })
       // var trafficLayer = new google.maps.TrafficLayer();
@@ -579,7 +580,8 @@ function closeNav() {
               y.type= "text";
         }
                    }
-                   else{ waypts.pop();
+                   else if(count > 2){ 
+                     waypts.pop();
                        }
                  }
     if (button.checked){ 
