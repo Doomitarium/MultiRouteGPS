@@ -206,10 +206,10 @@ body {
       <label for="changemode-bsp">Our TSP</label>
     </div>
  <div id="Final-selector" class="controls">
-      <input type="radio" name="final" id="changemode-google" checked="checked">
+      <input type="radio" name="final" id="changemode-final" checked="checked">
       <label for="changemode-final">Final Destination</label>
 
-      <input type="radio" name="final" id="changemode-bsp">
+      <input type="radio" name="final" id="changemode-round">
       <label for="changemode-round">Round Trip</label>
     </div>
 <div id="right-panel"></div>
@@ -364,8 +364,14 @@ function closeNav() {
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         document.getElementById('submit').addEventListener('click', function() {
-         this.setupClickListener('changemode-final', calculateAndDisplayFinalRoute(directionsService, directionsDisplay));
-         this.setupClickListener('changemode-round', calculateAndDisplayRoundRoute(directionsService, directionsDisplay));
+        var FinalSelector = document.getElementById('Final-selector');
+
+         if (FinalSelector == 'changemode-final'){
+           calculateAndDisplayFinalRoute(directionsService, directionsDisplay);
+         }
+         if(FinalSelector == 'changemode-round'){ 
+           calculateAndDisplayRoundRoute(directionsService, directionsDisplay);
+         }
       })
       // var trafficLayer = new google.maps.TrafficLayer();
       // trafficLayer.setMap(map);
