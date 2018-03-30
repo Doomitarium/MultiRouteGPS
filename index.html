@@ -365,7 +365,7 @@ function closeNav() {
         new AutocompleteDirectionsHandler(map);
         document.getElementById('submit').addEventListener('click', function() {
         var FinalSelector = document.getElementById('Final-selector');
-
+document.write(FinalSelector);
          if (FinalSelector == 'changemode-final'){
            calculateAndDisplayFinalRoute(directionsService, directionsDisplay);
          }
