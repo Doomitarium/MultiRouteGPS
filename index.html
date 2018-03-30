@@ -354,7 +354,7 @@ function closeNav() {
        document.getElementById('waypoint-input20').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input21').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
-        new AutocompleteDirectionsHandler(map);
+        
         document.getElementById('submit').addEventListener('click', function() {
             calculateAndDisplayRoute(directionsService, directionsDisplay);
       })
