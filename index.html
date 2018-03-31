@@ -329,174 +329,34 @@ function closeNav() {
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
-       var onChangeHandler0 = function() {
+       var onChangeHandler = function() {
             
        };
-       var onChangeHandler1 = function() {
-         waypts.splice(0, 1);
-             waypts.push({
-              location: document.getElementById('waypoint-input').value,
-              stopover: true
-              });
-         
-       };
-        var onChangeHandler2 = function() {
-             waypts.splice(1, 1);; waypts.push({
-              location: document.getElementById('waypoint-input2').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler3 = function() {
-          waypts.splice(2, 1);; waypts.push({
-              location: document.getElementById('waypoint-input3').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler4 = function() {
-            waypts.splice(3, 1);; waypts.push({
-              location: document.getElementById('waypoint-input4').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler5 = function() {
-            waypts.splice(4, 1);; waypts.push({
-              location: document.getElementById('waypoint-input5').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler6 = function() {
-            delete waypts[5]; waypts.push({
-              location: document.getElementById('waypoint-input6').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler7 = function() {
-           delete waypts[6]; waypts.push({
-              location: document.getElementById('waypoint-input7').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler8 = function() {
-           delete waypts[7]; waypts.push({
-              location: document.getElementById('waypoint-input8').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler9 = function() {
-            delete waypts[8]; waypts.push({
-              location: document.getElementById('waypoint-input9').value,
-              stopover: true
-              });
-        };
-        var onChangeHandler10 = function() {
-            delete waypts[9]; waypts.push({
-              location: document.getElementById('waypoint-input10').value,
-              stopover: true
-              });
-        };
-        var onChangeHandler11 = function() {
-            delete waypts[10]; waypts.push({
-              location: document.getElementById('waypoint-input11').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler12 = function() {
-            delete waypts[11]; waypts.push({
-              location: document.getElementById('waypoint-input12').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler13 = function() {
-          delete waypts[12]; waypts.push({
-              location: document.getElementById('waypoint-input13').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler14 = function() {
-           delete waypts[13]; waypts.push({
-              location: document.getElementById('waypoint-input14').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler15 = function() {
-            delete waypts[14]; waypts.push({
-              location: document.getElementById('waypoint-input15').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler16 = function() {
-           delete waypts[15]; waypts.push({
-              location: document.getElementById('waypoint-input16').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler17 = function() {
-            delete waypts[16]; waypts.push({
-              location: document.getElementById('waypoint-input17').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler18 = function() {
-            delete waypts[17]; waypts.push({
-              location: document.getElementById('waypoint-input18').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler19 = function() {
-            delete waypts[18]; waypts.push({
-              location: document.getElementById('waypoint-input19').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler20 = function() {
-           delete waypts[19]; waypts.push({
-              location: document.getElementById('waypoint-input20').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler21 = function() {
-            delete waypts[20]; waypts.push({
-              location: document.getElementById('waypoint-input21').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler22 = function() {
-            delete waypts[21]; waypts.push({
-              location: document.getElementById('waypoint-input22').value,
-              stopover: true
-              });
-       };
-        var onChangeHandler23 = function() {
-            delete waypts[22]; waypts.push({
-              location: document.getElementById('destination-input').value,
-              stopover: true
-              });
-       };
         
-       document.getElementById('origin-input').addEventListener('change', onChangeHandler0);
-       document.getElementById('destination-input').addEventListener('change', onChangeHandler23);
-       document.getElementById('waypoint-input').addEventListener('change', onChangeHandler1);
-       document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler2);
-       document.getElementById('waypoint-input3').addEventListener('change', onChangeHandler3);
-       document.getElementById('waypoint-input4').addEventListener('change', onChangeHandler4);
-       document.getElementById('waypoint-input5').addEventListener('change', onChangeHandler5);
-       document.getElementById('waypoint-input6').addEventListener('change', onChangeHandler6);
-       document.getElementById('waypoint-input7').addEventListener('change', onChangeHandler7);
-       document.getElementById('waypoint-input8').addEventListener('change', onChangeHandler8);
-       document.getElementById('waypoint-input9').addEventListener('change', onChangeHandler9);
-       document.getElementById('waypoint-input10').addEventListener('change', onChangeHandler10);
-       document.getElementById('waypoint-input11').addEventListener('change', onChangeHandler11);
-       document.getElementById('waypoint-input12').addEventListener('change', onChangeHandler12);
-       document.getElementById('waypoint-input13').addEventListener('change', onChangeHandler13);
-       document.getElementById('waypoint-input14').addEventListener('change', onChangeHandler14);
-       document.getElementById('waypoint-input15').addEventListener('change', onChangeHandler15);
-       document.getElementById('waypoint-input16').addEventListener('change', onChangeHandler16);
-       document.getElementById('waypoint-input17').addEventListener('change', onChangeHandler17);
-       document.getElementById('waypoint-input18').addEventListener('change', onChangeHandler18);
-       document.getElementById('waypoint-input19').addEventListener('change', onChangeHandler19);
-       document.getElementById('waypoint-input20').addEventListener('change', onChangeHandler20);
-       document.getElementById('waypoint-input21').addEventListener('change', onChangeHandler21);
-       document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler22);
+       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
+       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input3').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input4').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input5').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input6').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input7').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input8').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input9').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input10').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input11').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input12').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input13').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input14').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input15').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input16').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input17').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input18').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input19').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input20').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input21').addEventListener('change', onChangeHandler);
+       document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
         new AutocompleteDirectionsHandler(map);
         document.getElementById('submit').addEventListener('click', function() {
       var button1 = document.getElementById("button1");
