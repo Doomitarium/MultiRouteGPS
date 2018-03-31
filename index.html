@@ -333,11 +333,12 @@ function closeNav() {
             
        };
        var onChangeHandler1 = function() {
+         waypts.splice(0, 1);
              waypts.push({
               location: document.getElementById('waypoint-input').value,
               stopover: true
               });
-         delete waypts[0];
+         
        };
         var onChangeHandler2 = function() {
             delete waypts[1]; waypts.push({
