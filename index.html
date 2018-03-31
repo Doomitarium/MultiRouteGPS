@@ -341,25 +341,25 @@ function closeNav() {
          
        };
         var onChangeHandler2 = function() {
-            delete waypts[1]; waypts.push({
+             waypts.splice(1, 1);; waypts.push({
               location: document.getElementById('waypoint-input2').value,
               stopover: true
               });
        };
         var onChangeHandler3 = function() {
-          delete waypts[2]; waypts.push({
+          waypts.splice(2, 1);; waypts.push({
               location: document.getElementById('waypoint-input3').value,
               stopover: true
               });
        };
         var onChangeHandler4 = function() {
-           delete waypts[3]; waypts.push({
+            waypts.splice(3, 1);; waypts.push({
               location: document.getElementById('waypoint-input4').value,
               stopover: true
               });
        };
         var onChangeHandler5 = function() {
-           delete waypts[4]; waypts.push({
+            waypts.splice(4, 1);; waypts.push({
               location: document.getElementById('waypoint-input5').value,
               stopover: true
               });
