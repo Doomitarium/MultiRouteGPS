@@ -329,38 +329,103 @@ function closeNav() {
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
-          var onChangeHandler = function() {
-            count--
-            if (count > 3) {
-           waypts.pop()
-              count++;
-           }
+       var onChangeHandler0 = function() {
+            
        };
-      
-       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
-       document.getElementById('destination-input').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input3').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input4').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input5').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input6').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input7').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input8').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input9').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input10').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input11').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input12').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input13').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input14').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input15').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input16').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input17').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input18').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input19').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input20').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input21').addEventListener('change', onChangeHandler);
-       document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler);
+       var onChangeHandler1 = function() {
+            waypts[1]= document.getElementById('waypoint-input').value;
+       };
+        var onChangeHandler2 = function() {
+            waypts[2]= document.getElementById('waypoint-input2').value;
+       };
+        var onChangeHandler3 = function() {
+            waypts[3]= document.getElementById('waypoint-input3').value;
+       };
+        var onChangeHandler4 = function() {
+            waypts[4]= document.getElementById('waypoint-input4').value;
+       };
+        var onChangeHandler5 = function() {
+            waypts[5]= document.getElementById('waypoint-input5').value;
+       };
+        var onChangeHandler6 = function() {
+            waypts[6]= document.getElementById('waypoint-input6').value;
+       };
+        var onChangeHandler7 = function() {
+            waypts[7]= document.getElementById('waypoint-input7').value;
+       };
+        var onChangeHandler8 = function() {
+            waypts[8]= document.getElementById('waypoint-input8').value;
+       };
+        var onChangeHandler9 = function() {
+            waypts[9]= document.getElementById('waypoint-input9').value;
+       };
+        var onChangeHandler10 = function() {
+            waypts[10]= document.getElementById('waypoint-input10').value;
+       };
+        var onChangeHandler11 = function() {
+            waypts[11]= document.getElementById('waypoint-input11').value;
+       };
+        var onChangeHandler12 = function() {
+            waypts[12]= document.getElementById('waypoint-input12').value;
+       };
+        var onChangeHandler13 = function() {
+            waypts[13]= document.getElementById('waypoint-input13').value;
+       };
+        var onChangeHandler14 = function() {
+            waypts[14]= document.getElementById('waypoint-input14').value;
+       };
+        var onChangeHandler15 = function() {
+            waypts[15]= document.getElementById('waypoint-input15').value;
+       };
+        var onChangeHandler16 = function() {
+            waypts[16]= document.getElementById('waypoint-input16').value;
+       };
+        var onChangeHandler17 = function() {
+            waypts[17]= document.getElementById('waypoint-input17').value;
+       };
+        var onChangeHandler18 = function() {
+            waypts[18]= document.getElementById('waypoint-input18').value;
+       };
+        var onChangeHandler19 = function() {
+            waypts[19]= document.getElementById('waypoint-input19').value;
+       };
+        var onChangeHandler20 = function() {
+            waypts[20]= document.getElementById('waypoint-input20').value;
+       };
+        var onChangeHandler21 = function() {
+            waypts[21]= document.getElementById('waypoint-input21').value;
+       };
+        var onChangeHandler22 = function() {
+            waypts[22]= document.getElementById('waypoint-input22').value;
+       };
+        var onChangeHandler23 = function() {
+            waypts[23]= document.getElementById('destination-input').value;
+       };
+        
+       document.getElementById('origin-input').addEventListener('change', onChangeHandler0);
+       document.getElementById('destination-input').addEventListener('change', onChangeHandler23);
+       document.getElementById('waypoint-input').addEventListener('change', onChangeHandler1);
+       document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler2);
+       document.getElementById('waypoint-input3').addEventListener('change', onChangeHandler3);
+       document.getElementById('waypoint-input4').addEventListener('change', onChangeHandler4);
+       document.getElementById('waypoint-input5').addEventListener('change', onChangeHandler5);
+       document.getElementById('waypoint-input6').addEventListener('change', onChangeHandler6);
+       document.getElementById('waypoint-input7').addEventListener('change', onChangeHandler7);
+       document.getElementById('waypoint-input8').addEventListener('change', onChangeHandler8);
+       document.getElementById('waypoint-input9').addEventListener('change', onChangeHandler9);
+       document.getElementById('waypoint-input10').addEventListener('change', onChangeHandler10);
+       document.getElementById('waypoint-input11').addEventListener('change', onChangeHandler11);
+       document.getElementById('waypoint-input12').addEventListener('change', onChangeHandler12);
+       document.getElementById('waypoint-input13').addEventListener('change', onChangeHandler13);
+       document.getElementById('waypoint-input14').addEventListener('change', onChangeHandler14);
+       document.getElementById('waypoint-input15').addEventListener('change', onChangeHandler15);
+       document.getElementById('waypoint-input16').addEventListener('change', onChangeHandler16);
+       document.getElementById('waypoint-input17').addEventListener('change', onChangeHandler17);
+       document.getElementById('waypoint-input18').addEventListener('change', onChangeHandler18);
+       document.getElementById('waypoint-input19').addEventListener('change', onChangeHandler19);
+       document.getElementById('waypoint-input20').addEventListener('change', onChangeHandler20);
+       document.getElementById('waypoint-input21').addEventListener('change', onChangeHandler21);
+       document.getElementById('waypoint-input22').addEventListener('change', onChangeHandler22);
         new AutocompleteDirectionsHandler(map);
         document.getElementById('submit').addEventListener('click', function() {
       var button1 = document.getElementById("button1");
@@ -581,10 +646,12 @@ function closeNav() {
               location: document.getElementById('waypoint-input').value,
               stopover: true
               });
+           count = 2;
     }
         if(document.getElementById('waypoint-input3').value ==''&&document.getElementById('waypoint-input2').value !=''){
           var y = document.getElementById("waypoint-input3");
               y.type= "text";
+           count = 3;
         }
        if(document.getElementById('waypoint-input4').value ==''&&document.getElementById('waypoint-input3').value !=''){
           var y = document.getElementById("waypoint-input4");
@@ -593,6 +660,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input2').value,
               stopover: true
               });
+         count = 4;
         }
     if(document.getElementById('waypoint-input5').value ==''&&document.getElementById('waypoint-input4').value !=''){
           var y = document.getElementById("waypoint-input5");
@@ -601,6 +669,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input3').value,
               stopover: true
               });
+      count = 5;
         }
     if(document.getElementById('waypoint-input6').value ==''&&document.getElementById('waypoint-input5').value !=''){
           var y = document.getElementById("waypoint-input6");
@@ -609,6 +678,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input4').value,
               stopover: true
               });
+      count = 6;
         }
     if(document.getElementById('waypoint-input7').value ==''&&document.getElementById('waypoint-input6').value !=''){
           var y = document.getElementById("waypoint-input7");
@@ -617,6 +687,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input5').value,
               stopover: true
               });
+      count = 7;
         }
     if(document.getElementById('waypoint-input8').value ==''&&document.getElementById('waypoint-input7').value !=''){
           var y = document.getElementById("waypoint-input8");
@@ -625,6 +696,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input6').value,
               stopover: true
               });
+      count = 8;
         }
     if(document.getElementById('waypoint-input9').value ==''&&document.getElementById('waypoint-input8').value !=''){
           var y = document.getElementById("waypoint-input9");
@@ -633,6 +705,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input7').value,
               stopover: true
               });
+      count = 9;
         }
     if(document.getElementById('waypoint-input10').value ==''&&document.getElementById('waypoint-input9').value !=''){
           var y = document.getElementById("waypoint-input10");
@@ -641,6 +714,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input8').value,
               stopover: true
               });
+      count = 10;
         }
     if(document.getElementById('waypoint-input11').value ==''&&document.getElementById('waypoint-input10').value !=''){
           var y = document.getElementById("waypoint-input11");
@@ -649,6 +723,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input9').value,
               stopover: true
               });
+      count = 11;
         }
     if(document.getElementById('waypoint-input12').value ==''&&document.getElementById('waypoint-input11').value !=''){
           var y = document.getElementById("waypoint-input12");
@@ -657,6 +732,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input10').value,
               stopover: true
               });
+      count = 12;
         }
     if(document.getElementById('waypoint-input13').value ==''&&document.getElementById('waypoint-input12').value !=''){
           var y = document.getElementById("waypoint-input13");
@@ -665,6 +741,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input11').value,
               stopover: true
               });
+      count = 13;
         }
     if(document.getElementById('waypoint-input14').value ==''&&document.getElementById('waypoint-input13').value !=''){
           var y = document.getElementById("waypoint-input14");
@@ -673,6 +750,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input13').value,
               stopover: true
               });
+      count = 13;
         }
     if(document.getElementById('waypoint-input15').value ==''&&document.getElementById('waypoint-input14').value !=''){
           var y = document.getElementById("waypoint-input15");
@@ -681,6 +759,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input13').value,
               stopover: true
               });
+      count = 15;
         }
     if(document.getElementById('waypoint-input16').value ==''&&document.getElementById('waypoint-input15').value !=''){
           var y = document.getElementById("waypoint-input16");
@@ -689,6 +768,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input14').value,
               stopover: true
               });
+      count = 16;
         }
     if(document.getElementById('waypoint-input17').value ==''&&document.getElementById('waypoint-input16').value !=''){
           var y = document.getElementById("waypoint-input17");
@@ -697,6 +777,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input15').value,
               stopover: true
               });
+      count = 17;
         }
     if(document.getElementById('waypoint-input18').value ==''&&document.getElementById('waypoint-input17').value !=''){
           var y = document.getElementById("waypoint-input18");
@@ -705,6 +786,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input16').value,
               stopover: true
               });
+      count = 18;
         }
     if(document.getElementById('waypoint-input19').value ==''&&document.getElementById('waypoint-input18').value !=''){
           var y = document.getElementById("waypoint-input19");
@@ -713,6 +795,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input17').value,
               stopover: true
               });
+      count = 19;
         }
     if(document.getElementById('waypoint-input20').value ==''&&document.getElementById('waypoint-input19').value !=''){
           var y = document.getElementById("waypoint-input20");
@@ -721,6 +804,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input18').value,
               stopover: true
               });
+      count = 20;
         }
     if(document.getElementById('waypoint-input21').value ==''&&document.getElementById('waypoint-input20').value !=''){
           var y = document.getElementById("waypoint-input21");
@@ -729,6 +813,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input19').value,
               stopover: true
               });
+      count = 21;
         }
     if(document.getElementById('waypoint-input22').value ==''&&document.getElementById('waypoint-input21').value !=''){
           var y = document.getElementById("waypoint-input22");
@@ -737,6 +822,7 @@ function closeNav() {
               location: document.getElementById('waypoint-input20').value,
               stopover: true
               });
+      count = 22;
         }
     if(document.getElementById('destination-input').value ==''&&document.getElementById('waypoint-input22').value !=''){
           var y = document.getElementById("destination-input");
@@ -745,12 +831,14 @@ function closeNav() {
               location: document.getElementById('waypoint-input21').value,
               stopover: true
               });
+      count = 23;
         }
     if(document.getElementById('destination-input').value != ''){
           waypts.push({
               location: document.getElementById('waypoint-input22').value,
               stopover: true
               });
+      count = 24;
         }
       
     }
@@ -783,74 +871,72 @@ if(document.getElementById('waypoint-input2').value ==''&& document.getElementBy
 }
 else if(document.getElementById('waypoint-input3').value ==''&& document.getElementById('waypoint-input2').value !=''){
   var end = document.getElementById('waypoint-input2').value;
-  count = 2;
 }
            else if(document.getElementById('waypoint-input4').value ==''&& document.getElementById('waypoint-input3').value !=''){
   var end = document.getElementById('waypoint-input3').value;
-  count = 2;
 }
            else if(document.getElementById('waypoint-input5').value ==''&& document.getElementById('waypoint-input4').value !=''){
-  var end = document.getElementById('waypoint-input4').value; count = 2;
+  var end = document.getElementById('waypoint-input4').value; 
 }
            else if(document.getElementById('waypoint-input6').value ==''&& document.getElementById('waypoint-input5').value !=''){
-  var end = document.getElementById('waypoint-input5').value;  count = 2;
+  var end = document.getElementById('waypoint-input5').value;  
 }
            else if(document.getElementById('waypoint-input7').value ==''&& document.getElementById('waypoint-input6').value !=''){
-  var end = document.getElementById('waypoint-input6').value;  count = 2;
+  var end = document.getElementById('waypoint-input6').value;  
 }
            else if(document.getElementById('waypoint-input8').value ==''&& document.getElementById('waypoint-input7').value !=''){
-  var end = document.getElementById('waypoint-input7').value;  count = 2;
+  var end = document.getElementById('waypoint-input7').value;  
 }
            else if(document.getElementById('waypoint-input9').value ==''&& document.getElementById('waypoint-input8').value !=''){
-  var end = document.getElementById('waypoint-input8').value;  count = 2;
+  var end = document.getElementById('waypoint-input8').value;  
 }
            else if(document.getElementById('waypoint-input10').value ==''&& document.getElementById('waypoint-input9').value !=''){
-  var end = document.getElementById('waypoint-input9').value;  count = 2;
+  var end = document.getElementById('waypoint-input9').value;  
 }
            else if(document.getElementById('waypoint-input11').value ==''&& document.getElementById('waypoint-input10').value !=''){
-  var end = document.getElementById('waypoint-input10').value;  count = 2;
+  var end = document.getElementById('waypoint-input10').value;  
 }
            else if(document.getElementById('waypoint-input12').value ==''&& document.getElementById('waypoint-input11').value !=''){
-  var end = document.getElementById('waypoint-input').value;  count = 2;
+  var end = document.getElementById('waypoint-input').value;  
 }
            else if(document.getElementById('waypoint-input11').value ==''&& document.getElementById('waypoint-input').value !=''){
-  var end = document.getElementById('waypoint-input').value;  count = 2;
+  var end = document.getElementById('waypoint-input').value; 
 }
            else if(document.getElementById('waypoint-input13').value ==''&& document.getElementById('waypoint-input12').value !=''){
-  var end = document.getElementById('waypoint-input12').value;  count = 2;
+  var end = document.getElementById('waypoint-input12').value; 
 }
            else if(document.getElementById('waypoint-input14').value ==''&& document.getElementById('waypoint-input13').value !=''){
-  var end = document.getElementById('waypoint-input13').value;  count = 2;
+  var end = document.getElementById('waypoint-input13').value;  
 }
            else if(document.getElementById('waypoint-input15').value ==''&& document.getElementById('waypoint-input14').value !=''){
-  var end = document.getElementById('waypoint-input14').value;  count = 2;
+  var end = document.getElementById('waypoint-input14').value;  
 }
            else if(document.getElementById('waypoint-input16').value ==''&& document.getElementById('waypoint-input15').value !=''){
-  var end = document.getElementById('waypoint-input15').value; count = 2;
+  var end = document.getElementById('waypoint-input15').value; 
 }
            else if(document.getElementById('waypoint-input17').value ==''&& document.getElementById('waypoint-input16').value !=''){
-  var end = document.getElementById('waypoint-input16').value; count = 2;
+  var end = document.getElementById('waypoint-input16').value; 
 }
            else if(document.getElementById('waypoint-input18').value ==''&& document.getElementById('waypoint-input17').value !=''){
-  var end = document.getElementById('waypoint-input17').value; count = 2;
+  var end = document.getElementById('waypoint-input17').value;
 }
            else if(document.getElementById('waypoint-input19').value ==''&& document.getElementById('waypoint-input18').value !=''){
-  var end = document.getElementById('waypoint-input18').value; count = 2;
+  var end = document.getElementById('waypoint-input18').value; 
 }
            else if(document.getElementById('waypoint-input20').value ==''&& document.getElementById('waypoint-input19').value !=''){
-  var end = document.getElementById('waypoint-input19').value; count = 2;
+  var end = document.getElementById('waypoint-input19').value; 
 }
            else if(document.getElementById('waypoint-input21').value ==''&& document.getElementById('waypoint-input20').value !=''){
-  var end = document.getElementById('waypoint-input20').value; count = 2;
+  var end = document.getElementById('waypoint-input20').value; 
 }
            else if(document.getElementById('waypoint-input22').value ==''&& document.getElementById('waypoint-input21').value !=''){
-  var end = document.getElementById('waypoint-input21').value; count = 2;
+  var end = document.getElementById('waypoint-input21').value; 
 }
            else if(document.getElementById('destination-input').value ==''&& document.getElementById('waypoint-input22').value !=''){
-  var end = document.getElementById('waypoint-input22').value; count = 2;
+  var end = document.getElementById('waypoint-input22').value; 
 }
            else if(document.getElementById('destination-input').value !=''){
-  var end = document.getElementById('destination-input').value; count = 2;
+  var end = document.getElementById('destination-input').value; 
 }
            if(count == 1){
   directionsService.route({
