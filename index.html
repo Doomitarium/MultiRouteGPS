@@ -330,19 +330,7 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
        var onChangeHandler = function() {
-          var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
-      for (var j = 0; j < results.length; j++) {
-        var element = results[j];
-        var distance = element.distance.text;
-        var duration = element.duration.text;
-        var from = origins[i];
-        var to = destinations[j];
-      }
-    }
+          
   };
      var service = new google.maps.DistanceMatrixService();
       service.getDistanceMatrix(
@@ -585,7 +573,7 @@ function closeNav() {
           me.route();
         });
       };
-        
+           var me = this;
   AutocompleteDirectionsHandler.prototype.route = function() {
         if (!this.originPlaceId || !this.destinationPlaceId) {
           return;
