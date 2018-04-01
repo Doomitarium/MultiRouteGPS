@@ -211,8 +211,6 @@ body {
   <label for="button">Round Trip</label>
 <div id="right-panel"></div>
 <div id="map"></div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places&callback=initAutocomplete"
-         ></script>
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -332,11 +330,10 @@ function closeNav() {
           directionsDisplay.setMap(map);
           directionsDisplay.setPanel(document.getElementById('right-panel'));
        var onChangeHandler = function() {
-          
-  };
-     
+            
+       };
         
-       document.getElementById('origin-input').addEventListener('change',  onChangeHandler);
+       document.getElementById('origin-input').addEventListener('change', onChangeHandler);
        document.getElementById('destination-input').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input').addEventListener('change', onChangeHandler);
        document.getElementById('waypoint-input2').addEventListener('change', onChangeHandler);
@@ -566,7 +563,7 @@ function closeNav() {
           me.route();
         });
       };
-           var me = this;
+        
   AutocompleteDirectionsHandler.prototype.route = function() {
         if (!this.originPlaceId || !this.destinationPlaceId) {
           return;
@@ -902,33 +899,7 @@ else if(document.getElementById('waypoint-input3').value ==''&& document.getElem
   });
            }
          }
-  var service = new google.maps.DistanceMatrixService();
-      service.getDistanceMatrix(
-     {
-    origins: ['origin-input'],
-    destinations: ['waypoint-input', 'waypoint-input2','waypoint-input3'],
-    travelMode: 'DRIVING',
-    unitSystem: google.maps.UnitSystem.METRIC,
-    avoidHighways: false,
-    avoidTolls: false,
-  }, callback);
-
-function callback(response, status) {if (status == 'OK') {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
-      for (var j = 0; j < results.length; j++) {
-        var element = results[j];
-        var distance = element.distance.text;
-        var duration = element.duration.text;
-        var from = origins[i];
-        var to = destinations[j];
-      }
-    }
-  }
-}
+  
   
      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -939,5 +910,7 @@ function callback(response, status) {if (status == 'OK') {
       
      } 
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places&callback=initAutocomplete"
+         async defer></script>
   </body>
 </html>
