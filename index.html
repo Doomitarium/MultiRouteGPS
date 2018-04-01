@@ -344,6 +344,16 @@ function closeNav() {
       }
     }
   };
+     var service = new google.maps.DistanceMatrixService();
+      service.getDistanceMatrix(
+     {
+    origins: ['origin-input'],
+    destinations: ['waypoint-input', 'waypoint-input2','waypoint-input3'],
+    travelMode: 'DRIVING',
+    unitSystem: google.maps.UnitSystem.METRIC,
+    avoidHighways: False,
+    avoidTolls: False,
+  }, callback);
         
        document.getElementById('origin-input').addEventListener('change',  onChangeHandler);
        document.getElementById('destination-input').addEventListener('change', onChangeHandler);
@@ -911,16 +921,6 @@ else if(document.getElementById('waypoint-input3').value ==''&& document.getElem
   });
            }
          }
-  var service = new google.maps.DistanceMatrixService();
-service.getDistanceMatrix(
-  {
-    origins: ['origin-input'],
-    destinations: ['waypoint-input', 'waypoint-input2','waypoint-input3'],
-    travelMode: 'DRIVING',
-    unitSystem: google.maps.UnitSystem.METRIC,
-    avoidHighways: False,
-    avoidTolls: False,
-  }, callback);
 
 function callback(response, status) {if (status == 'OK') {
     var origins = response.originAddresses;
