@@ -211,6 +211,8 @@ body {
   <label for="button">Round Trip</label>
 <div id="right-panel"></div>
 <div id="map"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places&callback=initAutocomplete"
+         async defer></script>
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -937,7 +939,5 @@ function callback(response, status) {if (status == 'OK') {
       
      } 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places&callback=initAutocomplete"
-         async defer></script>
   </body>
 </html>
