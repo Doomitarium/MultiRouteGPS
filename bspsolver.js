@@ -381,6 +381,29 @@
       }
     }
   }
+	function nearestNeighbor(mode){
+		var INF = 1e7;
+		var N = numActive;
+		var start = 0;
+		var visited = new Array(N);
+	for (var i = 0; i < N; i ++) {
+            visited[i] = false;
+        }
+		bestPath[0] = start;
+        visited[start] = true;
+		for (var i = 1; i < N; i ++) {
+            var preNode = bestPath[i - 1];
+            var nxtNode = 0, tmpMin = INF;
+            for (var j = 0; j < N; j ++) if(!visited[j] && dur[preNode][j] > 0 && dur[preNode][j] < tmpMin) {
+                nxtNode = j;
+                tmpMin = dur[preNode][j];
+            }
+            visited[nxtNode] = true;
+            bestPath[i] = nxtNode;
+        }
+        bestPath[N] = start;
+    } 
+	
 
   /* Finds the next integer that has num bits set to 1.
    */
@@ -707,7 +730,7 @@
     visited[0] = true;
     currPath[0] = 0;
     cachedDirections = true;
-    if (numActive <= maxTspBF + mode) {
+    /*if (numActive <= maxTspBF + mode) {
       tspBruteForce(mode, 0, 0, 1);
     } else if (numActive <= maxTspDynamic + mode) {
       tspDynamic(mode);
@@ -715,7 +738,8 @@
       tspAntColonyK2(mode);
       tspK3(mode);
     }
-
+*/
+    nearestNeighbor(mode);
     prepareSolution();
   }
 
