@@ -2,16 +2,16 @@
   <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <style>
-body {
+body ,html {
     font-family: "Lato", sans-serif;
-    background-color: #D8C787;
+    background-image: linear-gradient(rgb(255, 196, 0), #ffffff,#ffffff,#ffffff);
 }
  #floating-panel {
   position: absolute;
   top: 10px;
   left: 25%;
   z-index: 5;
-  background-color: #fff;
+  background-color: rgb(68, 180, 255);
   padding: 5px;
   border: 1px solid #999;
   text-align: center;
@@ -68,7 +68,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgb(0, 132, 255);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -222,7 +222,7 @@ function closeNav() {
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>MRG-Your One Stop GPS Calculator</title>
-   \<style>
+   <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
@@ -305,20 +305,15 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-    <script src="bspsolver.js"></script>
-      var solverSelector = document.getElementById('solver-selector');
-      this.setupClickListener('changemode-google', initAutocomplete);
-      this.setupClickListener('changemode-bsp', bsp);
 
-   </script>
 <script>
       var count = 1;
       var directionsService;
       var directionsDisplay;
       var waypts = [];
       function initAutocomplete() { 
-        directionsService = new google.maps.DirectionsService();
-        directionsDisplay = new google.maps.DirectionsRenderer();
+      directionsService = new google.maps.DirectionsService();
+      directionsDisplay = new google.maps.DirectionsRenderer();
       var chicago = new google.maps.LatLng(41.850033, -87.6500523);
        var mapOptions = {
         zoom:7,
@@ -392,8 +387,11 @@ function closeNav() {
        
       
       }
-     
+    
    function AutocompleteDirectionsHandler(map) {
+      var solverSelector = document.getElementById('solver-selector');
+      this.setupClickListener('changemode-google', initAutocomplete);
+      this.setupClickListener('changemode-bsp');
         this.map = map;
         this.originPlaceId = null;
         this.waypointPlaceId = null;
@@ -910,6 +908,7 @@ else if(document.getElementById('waypoint-input3').value ==''&& document.getElem
       
      } 
     </script>
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NM65JVSmJAgV1Aus-FwZaZeJ3_lxqlY&libraries=places&callback=initAutocomplete"
          async defer></script>
   </body>
